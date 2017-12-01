@@ -7,6 +7,16 @@
 </ion-header>
 
 <ion-content padding>
+
+  <div *ngIf="results">
+    <p>{{results.text}}</p>
+    <p>{{results.format}}</p>
+    <p>{{results.cancelled}}</p>
+  </div>
+
+
+  <button ion-button (click)="scanBarcode()">Scan Barcode</button>
+
   I just wanna die.
   <p>
     If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
