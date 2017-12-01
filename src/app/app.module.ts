@@ -16,7 +16,7 @@ import { HomePage } from '../pages/home/home';
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp),
-    BarcodeScanner,
+    BarcodeScanner
   ],
   bootstrap: [IonicApp],
   entryComponents: [

@@ -10,10 +10,10 @@ export class HomePage {
 
   constructor(public navCtrl: NavController, private barcodeScanner: BarcodeScanner) {
 
-  }
+    this.barcodeScanner.scan().then((barcodeData) => {
+      // Success! Barcode data is here
+    });
 
-  this.barcodeScanner.scan().then((barcodeData) => {
-  // Success! Barcode data is here
-});
+  }
 
 }
