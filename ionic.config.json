@@ -1,6 +1,6 @@
 {
   "name": "VeloxApp",
-  "app_id": "",
+  "app_id": "3f8676eb",
   "type": "ionic-angular",
   "integrations": {
     "cordova": {}
