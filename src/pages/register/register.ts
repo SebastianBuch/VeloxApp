@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
-import {ReceiptPage} from '../receipt/receipt';
+/*import {ReceiptPage} from '../receipt/receipt';*/
 
 /**
  * Generated class for the RegisterPage page.
@@ -15,11 +15,21 @@ import {ReceiptPage} from '../receipt/receipt';
 })
 export class RegisterPage {
 
+  qrData = null;
+  qrDataID = null;
+  qrDataDate = null;
+  createdCode = null;
+
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
-  goToReceipt(){
+  /*goToReceipt(){
     this.navCtrl.push(ReceiptPage);
+  }*/
+
+  createCode() {
+    this.qrData = this.qrDataID + "-" + this.qrDataDate;
+    this.createdCode = this.qrData;
   }
 
 }

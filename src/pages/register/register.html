@@ -17,14 +17,21 @@
 
   <ion-item>
     <ion-label color="primary" floating>SHOP ID</ion-label>
-    <ion-input></ion-input>
+    <ion-input [(ngModel)]="qrDataID"></ion-input>
   </ion-item>
 
   <ion-item>
     <ion-label color="primary" floating>DATE</ion-label>
-    <ion-input></ion-input>
+    <ion-input type="date" [(ngModel)]="qrDataDate"></ion-input>
   </ion-item>
 
-  <button ion-button (click)="goToReceipt()" color="secondary">Confirm</button>
+  <button ion-button (click)="createCode()" color="secondary">Confirm</button>
+
+  <ion-card *ngIf="createdCode">
+    <ngx-qrcode [qrc-value]="createdCode"></ngx-qrcode>
+    <ion-card-content>
+      <p>Value: {{ createdCode }}</p>
+    </ion-card-content>
+  </ion-card>
 
 </ion-content>
