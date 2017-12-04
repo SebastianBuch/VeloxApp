@@ -10,7 +10,7 @@
 
 
 <ion-content>
-  <button class="scan">SCAN</button>
-  <button class="stats">STATISTICS</button>
-  <button class="discon" (click)="goToBack()">DISCONNECT</button>
+  <button class="scan" (click)="scanBarcode()">SCAN</button>
+  <button class="stats" (click)="goToStats()">STATISTICS</button>
+  <button class="discon" (click)="presentConfirm()">DISCONNECT</button>
 </ion-content>
