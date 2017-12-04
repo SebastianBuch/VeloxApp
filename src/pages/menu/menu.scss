@@ -1,0 +1,29 @@
+page-menu {
+  button {
+    font-family: "Helvetica Neue";
+    font-weight: bold;
+    font-size: 35px;
+    color: #ffffff;
+  }
+
+  .scan {
+    width: 100%;
+    height: 33.3vh;
+    background-color: #607DF8;
+    border-radius: 0;
+  }
+
+  .stats {
+    width: 100%;
+    height: 33.3vh;
+    background-color: #F8B953;
+    border-radius: 0;
+  }
+
+  .discon {
+    width: 100%;
+    height: 33.3vh;
+    background-color: #F86060;
+    border-radius: 0;
+  }
+}
