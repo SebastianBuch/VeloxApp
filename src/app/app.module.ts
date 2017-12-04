@@ -9,13 +9,17 @@ import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import {MenuPage} from '../pages/menu/menu';
 import {StatsPage} from '../pages/stats/stats';
+import {RegisterPage} from "../pages/register/register";
+import {ReceiptPage} from '../pages/receipt/receipt';
 
 @NgModule({
   declarations: [
     MyApp,
     HomePage,
     MenuPage,
-    StatsPage
+    StatsPage,
+    RegisterPage,
+    ReceiptPage
   ],
   imports: [
     BrowserModule,
@@ -26,7 +30,9 @@ import {StatsPage} from '../pages/stats/stats';
     MyApp,
     HomePage,
     MenuPage,
-    StatsPage
+    StatsPage,
+    RegisterPage,
+    ReceiptPage
   ],
   providers: [
     StatusBar,
