@@ -9,21 +9,21 @@ page-menu {
   .scan {
     width: 100%;
     height: 33.3vh;
-    background-color: #607DF8;
+    background-color: color($colors, primary);
     border-radius: 0;
   }
 
   .stats {
     width: 100%;
     height: 33.3vh;
-    background-color: #F8B953;
+    background-color: color($colors, secondary);
     border-radius: 0;
   }
 
   .discon {
     width: 100%;
     height: 33.3vh;
-    background-color: #F86060;
+    background-color: color($colors, danger);
     border-radius: 0;
   }
 }
