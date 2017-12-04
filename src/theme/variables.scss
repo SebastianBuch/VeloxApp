@@ -86,3 +86,9 @@ $colors: (
 
 @import "roboto";
 @import "noto-sans";
+
+* {
+  font-family: "Helvetica Neue";
+  color: #ffffff;
+  font-weight: bold;
+}
