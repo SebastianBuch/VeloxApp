@@ -26,7 +26,7 @@ export class ReceiptPage {
         data => this.testcode = data,
         error => console.error(error)
       );
-    //this.createdCode = this.testcode.shopIDdata + "-" + this.testcode.datadata;
+    this.createdCode = this.testcode.shopIDdata + "-" + this.testcode.datadata;
   }
 
 }
