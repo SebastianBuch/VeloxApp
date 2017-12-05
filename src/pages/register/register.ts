@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
-/*import {ReceiptPage} from '../receipt/receipt';*/
+import {ReceiptPage} from '../receipt/receipt';
 import { NativeStorage } from '@ionic-native/native-storage';
 
 /**
@@ -27,23 +27,15 @@ export class RegisterPage {
               private nativeStorage: NativeStorage) {
   }
 
-  /*goToReceipt(){
-    this.navCtrl.push(ReceiptPage);
-  }*/
-
   createCode() {
     this.qrData = this.qrDataID + "-" + this.qrDataDate;
     this.createdCode = this.qrData;
-    this.nativeStorage.setItem('myitem', {valueone: 'value', anotherProperty: 'anotherValue'})
+    this.nativeStorage.setItem('QRnativeData', {shopIDdata: 'value', datadata: 'anotherValue'})
       .then(
         () => console.log('Stored item!'),
         error => console.error('Error storing item', error)
       );
-    this.nativeStorage.getItem('myitem')
-      .then(
-        data => this.testcode = data,
-        error => console.error(error)
-      );
+    this.navCtrl.push(ReceiptPage);
   }
 
 }
