@@ -27,11 +27,4 @@
 
   <button ion-button (click)="createCode()" color="secondary">Confirm</button>
 
-  <ion-card *ngIf="createdCode">
-    <ngx-qrcode [qrc-value]="createdCode"></ngx-qrcode>
-    <ion-card-content>
-      <p>Value: {{ createdCode }} test: {{ testcode.valueone }}</p>
-    </ion-card-content>
-  </ion-card>
-
 </ion-content>
