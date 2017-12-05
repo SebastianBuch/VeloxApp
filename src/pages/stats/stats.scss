@@ -32,15 +32,15 @@ page-stats {
   }
 
   .different_products {
-    background-color: color($colors, primary);
+    background-color: color($colors, danger);
   }
 
   .total_products {
-    background-color: color($colors, secondary);
+    background-color: color($colors, primary);
   }
 
   .total_store {
-    background-color: color($colors, danger);
+    background-color: color($colors, secondary);
   }
 
 
