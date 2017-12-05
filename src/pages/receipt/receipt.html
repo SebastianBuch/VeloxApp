@@ -18,7 +18,7 @@
     <ion-card-content>
       <p>Shop ID: {{ testcode.shopIDdata }}</p>
       <p>Date: {{ testcode.datadate}}</p>
-      <p>{{ createdCode }}</p>
+      <p>{{ testcode.dataAndID }}</p>
     </ion-card-content>
     <ngx-qrcode [qrc-value]="testcode.shopIDdata"></ngx-qrcode>
   </ion-card>
