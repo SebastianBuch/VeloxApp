@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 import {ReceiptPage} from '../receipt/receipt';
 import { NativeStorage } from '@ionic-native/native-storage';
+import { DatePipe } from '@angular/common'
 
 /**
  * Generated class for the RegisterPage page.
@@ -20,10 +21,12 @@ export class RegisterPage {
   qrDataID = '';
   qrDataDate = '';
   createdCode = '';
+  todayDate = new Date();
 
   constructor(public navCtrl: NavController,
               public navParams: NavParams,
               private nativeStorage: NativeStorage) {
+    console.log(this.todayDate.getDate(), this.todayDate.getMonth()+1, this.todayDate.getFullYear());
   }
 
   createCode() {

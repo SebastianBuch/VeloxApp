@@ -22,7 +22,7 @@
 
   <ion-item>
     <ion-label color="primary" floating>DATE</ion-label>
-    <ion-datetime displayFormat="DD-MM-YYYY" [(ngModel)]="qrDataDate"></ion-datetime>
+    <ion-datetime displayFormat="DD-MM-YYYY" min="2017" max="2100" [(ngModel)]="qrDataDate"></ion-datetime>
   </ion-item>
 
   <button ion-button (click)="createCode()" color="secondary">Confirm</button>
