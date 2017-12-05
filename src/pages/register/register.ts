@@ -20,7 +20,6 @@ export class RegisterPage {
   qrDataID = '';
   qrDataDate = '';
   createdCode = '';
-  testcode = '';
 
   constructor(public navCtrl: NavController,
               public navParams: NavParams,
