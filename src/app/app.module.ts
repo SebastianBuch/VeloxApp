@@ -12,6 +12,7 @@ import {StatsPage} from '../pages/stats/stats';
 import {RegisterPage} from "../pages/register/register";
 import {ReceiptPage} from '../pages/receipt/receipt';
 import { NgxQRCodeModule } from 'ngx-qrcode2';
+import { Vibration } from '@ionic-native/vibration';
 
 @NgModule({
   declarations: [
@@ -41,7 +42,8 @@ import { NgxQRCodeModule } from 'ngx-qrcode2';
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     BarcodeScanner,
-    NgxQRCodeModule
+    NgxQRCodeModule,
+    Vibration
   ]
 })
 export class AppModule {}

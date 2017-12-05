@@ -4,6 +4,7 @@ import { BarcodeScanner, BarcodeScannerOptions } from '@ionic-native/barcode-sca
 import {MenuPage} from '../menu/menu';
 import {RegisterPage} from '../register/register';
 import { ToastController } from 'ionic-angular';
+import { Vibration } from '@ionic-native/vibration';
 
 @Component({
   selector: 'page-home',
@@ -13,7 +14,11 @@ export class HomePage {
 
   options: BarcodeScannerOptions;
 
-  constructor(public navCtrl: NavController, private barcodeScanner: BarcodeScanner, private alertCtrl: AlertController, private toastCtrl: ToastController) {
+  constructor(public navCtrl: NavController,
+              private barcodeScanner: BarcodeScanner,
+              private alertCtrl: AlertController,
+              private toastCtrl: ToastController,
+              private vibration: Vibration) {
 
   }
 
@@ -55,8 +60,9 @@ export class HomePage {
                 this.toastCtrl.create({
                   message: 'Wrong password',
                   duration: 3000,
-                  position: 'bottom'
+                  position: 'top'
                 }).present();
+              this.vibration.vibrate(1000);
               // toast end
               return false;
             }
