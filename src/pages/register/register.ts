@@ -34,7 +34,7 @@ export class RegisterPage {
   createCode() {
     this.qrData = this.qrDataID + "-" + this.qrDataDate;
     this.createdCode = this.qrData;
-    this.nativeStorage.setItem('myitem', {property: 'value', anotherProperty: 'anotherValue'})
+    this.nativeStorage.setItem('myitem', {valueone: 'value', anotherProperty: 'anotherValue'})
       .then(
         () => console.log('Stored item!'),
         error => console.error('Error storing item', error)
