@@ -20,6 +20,7 @@ export class RegisterPage {
   qrDataID = '';
   qrDataDate = '';
   createdCode = '';
+  testcode = '';
 
   constructor(public navCtrl: NavController,
               public navParams: NavParams,
@@ -37,6 +38,11 @@ export class RegisterPage {
       .then(
         () => console.log('Stored item!'),
         error => console.error('Error storing item', error)
+      );
+    this.nativeStorage.getItem('myitem')
+      .then(
+        data => this.testcode = data,
+        error => console.error(error)
       );
   }
 
