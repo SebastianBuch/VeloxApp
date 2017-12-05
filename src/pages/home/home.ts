@@ -3,6 +3,7 @@ import {AlertController, NavController} from 'ionic-angular';
 import { BarcodeScanner, BarcodeScannerOptions } from '@ionic-native/barcode-scanner';
 import {MenuPage} from '../menu/menu';
 import {RegisterPage} from '../register/register';
+import { ToastController } from 'ionic-angular';
 
 @Component({
   selector: 'page-home',
@@ -12,7 +13,7 @@ export class HomePage {
 
   options: BarcodeScannerOptions;
 
-  constructor(public navCtrl: NavController, private barcodeScanner: BarcodeScanner, private alertCtrl: AlertController) {
+  constructor(public navCtrl: NavController, private barcodeScanner: BarcodeScanner, private alertCtrl: AlertController, private toastCtrl: ToastController) {
 
   }
 
@@ -50,7 +51,13 @@ export class HomePage {
               this.navCtrl.push(RegisterPage);
             } else {
               console.log('Wrong Password');
-              // invalid login
+              // toast begin
+                this.toastCtrl.create({
+                  message: 'Wrong password',
+                  duration: 3000,
+                  position: 'bottom'
+                }).present();
+              // toast end
               return false;
             }
           }
