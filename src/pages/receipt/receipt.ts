@@ -16,6 +16,7 @@ import { NativeStorage } from '@ionic-native/native-storage';
 export class ReceiptPage {
 
   testcode = '';
+  createdCode = '';
 
   constructor(public navCtrl: NavController,
               public navParams: NavParams,

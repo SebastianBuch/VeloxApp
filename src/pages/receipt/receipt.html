@@ -14,5 +14,9 @@
 
 
 <ion-content>
-  <p>test: {{ testcode.shopIDdata }}</p>
+    <ngx-qrcode [qrc-value]="testcode.shopIDdata"></ngx-qrcode>
+    <ion-card-content>
+      <p>test: {{ testcode.shopIDdata }}</p>
+    </ion-card-content>
+  </ion-card>
 </ion-content>
