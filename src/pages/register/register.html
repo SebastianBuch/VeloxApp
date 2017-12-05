@@ -22,16 +22,9 @@
 
   <ion-item>
     <ion-label color="primary" floating>DATE</ion-label>
-    <ion-input type="date" [(ngModel)]="qrDataDate"></ion-input>
+    <ion-datetime displayFormat="DD-MM-YYYY" [(ngModel)]="qrDataDate"></ion-datetime>
   </ion-item>
 
   <button ion-button (click)="createCode()" color="secondary">Confirm</button>
-
-  <ion-card *ngIf="createdCode">
-    <ngx-qrcode [qrc-value]="createdCode"></ngx-qrcode>
-    <ion-card-content>
-      <p>Value: {{ createdCode }}</p>
-    </ion-card-content>
-  </ion-card>
 
 </ion-content>

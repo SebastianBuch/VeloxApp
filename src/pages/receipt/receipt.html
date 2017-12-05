@@ -13,6 +13,13 @@
 </ion-header>
 
 
-<ion-content padding>
-
+<ion-content>
+  <ion-card>
+    <ion-card-content>
+      <p>Shop ID: {{ testcode.shopIDdata }}</p>
+      <p>Date: {{ testcode.datadate}}</p>
+      <p>{{ testcode.dateAndID }}</p>
+    </ion-card-content>
+    <ngx-qrcode [qrc-value]="testcode.dateAndID"></ngx-qrcode>
+  </ion-card>
 </ion-content>

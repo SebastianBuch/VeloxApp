@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
-/*import {ReceiptPage} from '../receipt/receipt';*/
+import {ReceiptPage} from '../receipt/receipt';
+import { NativeStorage } from '@ionic-native/native-storage';
 
 /**
  * Generated class for the RegisterPage page.
@@ -15,21 +16,25 @@ import { NavController, NavParams } from 'ionic-angular';
 })
 export class RegisterPage {
 
-  qrData = null;
-  qrDataID = null;
-  qrDataDate = null;
-  createdCode = null;
+  qrData = '';
+  qrDataID = '';
+  qrDataDate = '';
+  createdCode = '';
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController,
+              public navParams: NavParams,
+              private nativeStorage: NativeStorage) {
   }
-
-  /*goToReceipt(){
-    this.navCtrl.push(ReceiptPage);
-  }*/
 
   createCode() {
     this.qrData = this.qrDataID + "-" + this.qrDataDate;
     this.createdCode = this.qrData;
+    this.nativeStorage.setItem('QRnativeData', {shopIDdata: this.qrDataID, datadate: this.qrDataDate, dateAndID: this.qrData})
+      .then(
+        () => console.log('Stored item!'),
+        error => console.error('Error storing item', error)
+      );
+    this.navCtrl.push(ReceiptPage);
   }
 
 }

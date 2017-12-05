@@ -5,12 +5,15 @@ import { BarcodeScanner} from '@ionic-native/barcode-scanner';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
 
+import { IonicStorageModule } from '@ionic/storage';
+import { NativeStorage } from '@ionic-native/native-storage';
+
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
-import {MenuPage} from '../pages/menu/menu';
-import {StatsPage} from '../pages/stats/stats';
-import {RegisterPage} from "../pages/register/register";
-import {ReceiptPage} from '../pages/receipt/receipt';
+import { MenuPage } from '../pages/menu/menu';
+import { StatsPage } from '../pages/stats/stats';
+import { RegisterPage } from "../pages/register/register";
+import { ReceiptPage } from '../pages/receipt/receipt';
 import { NgxQRCodeModule } from 'ngx-qrcode2';
 import { Vibration } from '@ionic-native/vibration';
 
@@ -26,7 +29,8 @@ import { Vibration } from '@ionic-native/vibration';
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp),
-    NgxQRCodeModule
+    NgxQRCodeModule,
+    IonicStorageModule.forRoot()
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -43,7 +47,8 @@ import { Vibration } from '@ionic-native/vibration';
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     BarcodeScanner,
     NgxQRCodeModule,
-    Vibration
+    Vibration,
+    NativeStorage
   ]
 })
 export class AppModule {}
