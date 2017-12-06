@@ -10,7 +10,6 @@ import {MenuPage} from '../menu/menu';
 export class ReceiptPage {
 
   receiptData = '';
-  testData = 'testdata';
 
   constructor(public navCtrl: NavController,
               public navParams: NavParams,
