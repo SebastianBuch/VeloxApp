@@ -4,6 +4,7 @@ import { BarcodeScanner, BarcodeScannerOptions } from '@ionic-native/barcode-sca
 import {HomePage} from '../home/home';
 import {StatsPage} from '../stats/stats';
 import { ScanpromptPage } from '../scanprompt/scanprompt';
+import { NativeStorage } from '@ionic-native/native-storage';
 
 @Component({
   selector: 'page-menu',
@@ -13,12 +14,18 @@ export class MenuPage {
 
   scanResult: {};
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, private alertCtrl: AlertController, private barcodeScanner: BarcodeScanner) {
+  constructor(public navCtrl: NavController,
+              public navParams: NavParams,
+              private alertCtrl: AlertController,
+              private barcodeScanner: BarcodeScanner,
+              private nativeStorage: NativeStorage) {
   }
 
   async scanBarcode() {
     this.scanResult = await this.barcodeScanner.scan();
     this.navCtrl.push(ScanpromptPage);
+    this.nativeStorage.setItem('scannedResult', {productAmount: this.scanResult})
+      .then( () => console.log('Stored item!'), error => console.error('Error storing item'));
     console.log(this.scanResult);
   }
 
