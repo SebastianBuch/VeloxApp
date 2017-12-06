@@ -1,3 +1,25 @@
 page-receipt {
+  .scroll-content {
+    background-color: color($colors, primary);
+  }
 
+  p {
+    color: #ffffff;
+    font-weight: bold;
+  }
+
+  ion-content .button {
+    width: 70%;
+    margin-top: 15px;
+  }
+
+  ion-content .centerreceipt {
+    text-align: center;
+  }
+
+  .qrcode img {
+    width: 90%;
+    filter:invert(100%);
+    mix-blend-mode: screen;
+  }
 }

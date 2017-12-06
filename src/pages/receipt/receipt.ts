@@ -1,13 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 import { NativeStorage } from '@ionic-native/native-storage';
-
-/**
- * Generated class for the ReceiptPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
+import {MenuPage} from '../menu/menu';
 
 @Component({
   selector: 'page-receipt',
@@ -16,7 +10,7 @@ import { NativeStorage } from '@ionic-native/native-storage';
 export class ReceiptPage {
 
   receiptData = '';
-  createdCode = '';
+  testData = 'testdata';
 
   constructor(public navCtrl: NavController,
               public navParams: NavParams,
@@ -26,6 +20,14 @@ export class ReceiptPage {
         data => this.receiptData = data,
         error => console.error(error)
       );
+  }
+
+  goToMenu(){
+    this.navCtrl.setRoot(MenuPage);
+  }
+
+  sendMail() {
+
   }
 
 }

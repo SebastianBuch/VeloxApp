@@ -2,14 +2,6 @@ import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 import {ReceiptPage} from '../receipt/receipt';
 import { NativeStorage } from '@ionic-native/native-storage';
-import { DatePipe } from '@angular/common'
-
-/**
- * Generated class for the RegisterPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
 
 @Component({
   selector: 'page-register',
