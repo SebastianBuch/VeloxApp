@@ -12,8 +12,6 @@ import { NativeStorage } from '@ionic-native/native-storage';
 })
 export class MenuPage {
 
-  scanResult: {};
-
   constructor(public navCtrl: NavController,
               public navParams: NavParams,
               private alertCtrl: AlertController,
@@ -22,12 +20,24 @@ export class MenuPage {
   }
 
   async scanBarcode() {
+    this.barcodeScanner.scan().then((barcodeData) => {
+      // Success! Barcode data is here
+      // alert(barcodeData.text);
+      this.nativeStorage.setItem('scannedResult', {productAmount: barcodeData.text})
+        .then( () => console.log('Stored item!'), error => console.error('Error storing item'));
+      console.log(barcodeData.text);
+    }, (err) => {
+      // An error occurred
+    });
+  }
+
+  /*async scanBarcode() {
     this.scanResult = await this.barcodeScanner.scan();
     this.navCtrl.push(ScanpromptPage);
     this.nativeStorage.setItem('scannedResult', {productAmount: this.scanResult})
       .then( () => console.log('Stored item!'), error => console.error('Error storing item'));
     console.log(this.scanResult);
-  }
+  }*/
 
   presentConfirm() {
     let alert = this.alertCtrl.create({
