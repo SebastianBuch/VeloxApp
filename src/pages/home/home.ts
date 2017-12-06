@@ -27,7 +27,7 @@ export class HomePage {
   async scanBarcode() {
     this.barcodeScanner.scan().then((barcodeData) => {
       // Success! Barcode data is here
-      alert(barcodeData);
+      alert(barcodeData.text);
     }, (err) => {
       // An error occurred
     });
