@@ -27,21 +27,12 @@ export class ScanpromptPage {
 
   confirmAmount() {
     // save data
+
     this.toastCtrl.create({
       message: this.productAmount + ' was registered',
       duration: 3000,
       position: 'top'
     }).present();
-
-    let loading = this.loadingCtrl.create({
-      content: 'Please wait...'
-    });
-
-    loading.present();
-
-    setTimeout(() => {
-      loading.dismiss();
-    }, 5000);
 
     this.scanner();
   }
