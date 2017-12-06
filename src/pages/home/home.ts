@@ -5,6 +5,7 @@ import {MenuPage} from '../menu/menu';
 import {RegisterPage} from '../register/register';
 import { ToastController } from 'ionic-angular';
 import { Vibration } from '@ionic-native/vibration';
+import {ReceiptPage} from '../receipt/receipt';
 
 @Component({
   selector: 'page-home',
@@ -29,6 +30,10 @@ export class HomePage {
 
   goToMenu(){
     this.navCtrl.setRoot(MenuPage);
+  }
+
+  goToReceipt() {
+    this.navCtrl.push(ReceiptPage);
   }
 
   registerShopPage() {

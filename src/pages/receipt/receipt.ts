@@ -15,7 +15,7 @@ import { NativeStorage } from '@ionic-native/native-storage';
 })
 export class ReceiptPage {
 
-  testcode = '';
+  receiptData = '';
   createdCode = '';
 
   constructor(public navCtrl: NavController,
@@ -23,7 +23,7 @@ export class ReceiptPage {
               private nativeStorage: NativeStorage) {
     this.nativeStorage.getItem('QRnativeData')
       .then(
-        data => this.testcode = data,
+        data => this.receiptData = data,
         error => console.error(error)
       );
   }

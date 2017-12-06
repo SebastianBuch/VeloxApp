@@ -16,10 +16,10 @@
 <ion-content>
   <ion-card>
     <ion-card-content>
-      <p>Shop ID: {{ testcode.shopIDdata }}</p>
-      <p>Date: {{ testcode.datadate}}</p>
-      <p>{{ testcode.dateAndID }}</p>
+      <p>Shop ID: {{ receiptData.shopIDdata }}</p>
+      <p>Date: {{ receiptData.datadate}}</p>
+      <p>{{ receiptData.dateAndID }}</p>
     </ion-card-content>
-    <ngx-qrcode [qrc-value]="testcode.dateAndID"></ngx-qrcode>
+    <ngx-qrcode [qrc-value]="receiptData.dateAndID"></ngx-qrcode>
   </ion-card>
 </ion-content>
