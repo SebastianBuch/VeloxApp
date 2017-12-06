@@ -26,7 +26,7 @@ export class HomePage {
 
   async scanBarcode() {
     this.scanResult = await this.barcodeScanner.scan();
-    if ( this.scanResult === '8719323938014') {
+    if ( this.scanResult === 8719323938014) {
       this.navCtrl.setRoot(MenuPage);
     }
     console.log(this.scanResult);
