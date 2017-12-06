@@ -25,11 +25,18 @@ export class HomePage {
   }
 
   async scanBarcode() {
-    this.scanResult = await this.barcodeScanner.scan();
-    if ( this.scanResult ) {
-      alert(this.scanResult);
+    this.barcodeScanner.scan().then((barcodeData) => {
+      // Success! Barcode data is here
+      alert(barcodeData);
+    }, (err) => {
+      // An error occurred
+    });
+
+    //this.scanResult = await this.barcodeScanner.scan();
+    //if ( this.scanResult ) {
+      //alert(this.scanResult);
       //this.navCtrl.setRoot(MenuPage);
-    }
+    //}
   }
 
   goToMenu(){
