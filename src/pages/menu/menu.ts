@@ -11,13 +11,15 @@ import { ScanpromptPage } from '../scanprompt/scanprompt';
 })
 export class MenuPage {
 
+  scanResult: {};
+
   constructor(public navCtrl: NavController, public navParams: NavParams, private alertCtrl: AlertController, private barcodeScanner: BarcodeScanner) {
   }
 
   async scanBarcode() {
-    const results = await this.barcodeScanner.scan();
+    this.scanResult = await this.barcodeScanner.scan();
     this.navCtrl.push(ScanpromptPage);
-    console.log(results);
+    console.log(this.scanResult);
   }
 
   presentConfirm() {

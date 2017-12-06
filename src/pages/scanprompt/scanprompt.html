@@ -7,12 +7,20 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>scanprompt</ion-title>
+    <ion-title>Amount</ion-title>
   </ion-navbar>
 
 </ion-header>
 
 
-<ion-content padding>
+<ion-content>
+  <p>{{scanResult}}</p>
+
+  <ion-item class="amount">
+    <ion-label color="primary" floating>AMOUNT</ion-label>
+    <ion-input [(ngModel)]="productAmount"></ion-input>
+  </ion-item>
+
+  <button class="button" ion-button (click)="saveAmount()" color="secondary">Confirm</button>
 
 </ion-content>

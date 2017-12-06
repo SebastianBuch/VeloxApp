@@ -14,11 +14,14 @@ import { NavController, NavParams } from 'ionic-angular';
 })
 export class ScanpromptPage {
 
+  productAmount = '';
+
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad ScanpromptPage');
+  saveAmount() {
+
   }
+
 
 }
