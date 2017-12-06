@@ -34,12 +34,6 @@ export class HomePage {
     }, (err) => {
       // An error occurred
     });
-
-    //this.scanResult = await this.barcodeScanner.scan();
-    //if ( this.scanResult ) {
-      //alert(this.scanResult);
-      //this.navCtrl.setRoot(MenuPage);
-    //}
   }
 
   goToMenu(){
