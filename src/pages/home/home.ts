@@ -14,7 +14,6 @@ import {ReceiptPage} from '../receipt/receipt';
 export class HomePage {
 
   options: BarcodeScannerOptions;
-  scanResult;
 
   constructor(public navCtrl: NavController,
               private barcodeScanner: BarcodeScanner,
@@ -30,6 +29,12 @@ export class HomePage {
       // alert(barcodeData.text);
       if (barcodeData.text === '8719323938014') {
         this.navCtrl.setRoot(MenuPage);
+      } else {
+        this.toastCtrl.create({
+          message: 'Invalid QR code',
+          duration: 3000,
+          position: 'top'
+        }).present();
       }
     }, (err) => {
       // An error occurred
