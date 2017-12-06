@@ -14,6 +14,7 @@ import {ReceiptPage} from '../receipt/receipt';
 export class HomePage {
 
   options: BarcodeScannerOptions;
+  scanResult: {};
 
   constructor(public navCtrl: NavController,
               private barcodeScanner: BarcodeScanner,
@@ -24,8 +25,11 @@ export class HomePage {
   }
 
   async scanBarcode() {
-    const results = await this.barcodeScanner.scan();
-    console.log(results);
+    this.scanResult = await this.barcodeScanner.scan();
+    if ( this.scanResult === '8719323938014') {
+      this.navCtrl.setRoot(MenuPage);
+    }
+    console.log(this.scanResult);
   }
 
   goToMenu(){
