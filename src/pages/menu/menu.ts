@@ -3,13 +3,7 @@ import {AlertController, NavController, NavParams} from 'ionic-angular';
 import { BarcodeScanner, BarcodeScannerOptions } from '@ionic-native/barcode-scanner';
 import {HomePage} from '../home/home';
 import {StatsPage} from '../stats/stats';
-
-/**
- * Generated class for the MenuPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
+import { ScanpromptPage } from '../scanprompt/scanprompt';
 
 @Component({
   selector: 'page-menu',
@@ -22,6 +16,7 @@ export class MenuPage {
 
   async scanBarcode() {
     const results = await this.barcodeScanner.scan();
+    this.navCtrl.push(ScanpromptPage);
     console.log(results);
   }
 

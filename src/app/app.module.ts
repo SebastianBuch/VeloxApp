@@ -14,6 +14,7 @@ import { MenuPage } from '../pages/menu/menu';
 import { StatsPage } from '../pages/stats/stats';
 import { RegisterPage } from "../pages/register/register";
 import { ReceiptPage } from '../pages/receipt/receipt';
+import { ScanpromptPage } from '../pages/scanprompt/scanprompt';
 import { NgxQRCodeModule } from 'ngx-qrcode2';
 import { Vibration } from '@ionic-native/vibration';
 
@@ -24,7 +25,8 @@ import { Vibration } from '@ionic-native/vibration';
     MenuPage,
     StatsPage,
     RegisterPage,
-    ReceiptPage
+    ReceiptPage,
+    ScanpromptPage
   ],
   imports: [
     BrowserModule,
@@ -39,7 +41,8 @@ import { Vibration } from '@ionic-native/vibration';
     MenuPage,
     StatsPage,
     RegisterPage,
-    ReceiptPage
+    ReceiptPage,
+    ScanpromptPage
   ],
   providers: [
     StatusBar,
