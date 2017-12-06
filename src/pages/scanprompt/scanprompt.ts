@@ -24,7 +24,6 @@ export class ScanpromptPage {
 
   }
 
-
   confirmAmount() {
     // save data
     this.toastCtrl.create({
@@ -32,16 +31,19 @@ export class ScanpromptPage {
       duration: 3000,
       position: 'top'
     }).present();
+    this.scanner();
+  }
+
+  scanner() {
     this.barcodeScanner.scan().then((barcodeData) => {
       // Success! Barcode data is here
       this.nativeStorage.setItem('scannedResult', {productData: barcodeData.text})
         .then( () => console.log('Stored item!'), error => console.error('Error storing item'));
       console.log(barcodeData.text);
-      this.navCtrl.push(ScanpromptPage);
+      this.navCtrl.setRoot(ScanpromptPage);
     }, (err) => {
       // An error occurred
     });
   }
-
 
 }
