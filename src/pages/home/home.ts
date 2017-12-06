@@ -29,7 +29,7 @@ export class HomePage {
     if ( this.scanResult === 8719323938014) {
       this.navCtrl.setRoot(MenuPage);
     }
-    console.log(this.scanResult);
+    alert(this.scanResult);
   }
 
   goToMenu(){
