@@ -27,7 +27,7 @@ export class HomePage {
   async scanBarcode() {
     this.barcodeScanner.scan().then((barcodeData) => {
       // Success! Barcode data is here
-      //alert(barcodeData.text);
+      // alert(barcodeData.text);
       if (barcodeData.text === '8719323938014') {
         this.navCtrl.setRoot(MenuPage);
       }
