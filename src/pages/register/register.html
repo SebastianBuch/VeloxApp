@@ -15,16 +15,16 @@
 
 <ion-content>
 
-  <ion-item>
-    <ion-label color="primary" floating>SHOP ID</ion-label>
-    <ion-input [(ngModel)]="qrDataID"></ion-input>
+  <ion-item class="register">
+    <ion-label floating>SHOP ID</ion-label>
+    <ion-input autofocus [(ngModel)]="qrDataID"></ion-input>
   </ion-item>
 
-  <ion-item>
-    <ion-label color="primary" floating>DATE</ion-label>
+  <ion-item class="register">
+    <ion-label floating>DATE</ion-label>
     <ion-datetime displayFormat="DD-MM-YYYY" min="2017" max="2100" [(ngModel)]="qrDataDate"></ion-datetime>
   </ion-item>
 
-  <button ion-button (click)="createCode()" color="secondary">Confirm</button>
+  <button class="button" ion-button (click)="createCode()" color="secondary">Confirm</button>
 
 </ion-content>

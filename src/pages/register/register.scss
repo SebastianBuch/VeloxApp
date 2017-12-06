@@ -1,3 +1,19 @@
 page-register {
+  .scroll-content {
+    background-color: color($colors, primary);
+  }
 
+  .register {
+    background-color: color($colors, primary);
+    color: #ffffff;
+  }
+
+  ion-content .button {
+    width: 70%;
+    margin-top: 30px;
+  }
+
+  ion-content {
+    text-align: center;
+  }
 }
