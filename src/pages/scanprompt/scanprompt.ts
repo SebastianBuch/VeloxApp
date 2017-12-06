@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController, NavParams } from 'ionic-angular';
+import {LoadingController, NavController, NavParams} from 'ionic-angular';
 import { NativeStorage } from '@ionic-native/native-storage';
 import { BarcodeScanner, BarcodeScannerOptions } from '@ionic-native/barcode-scanner';
 import { ToastController } from 'ionic-angular';
@@ -17,7 +17,8 @@ export class ScanpromptPage {
               public navParams: NavParams,
               private nativeStorage: NativeStorage,
               private barcodeScanner: BarcodeScanner,
-              private toastCtrl: ToastController) {
+              private toastCtrl: ToastController,
+              public loadingCtrl: LoadingController) {
 
     this.nativeStorage.getItem('scannedResult')
       .then(data => this.productData = data, error => console.error(error));
@@ -31,6 +32,17 @@ export class ScanpromptPage {
       duration: 3000,
       position: 'top'
     }).present();
+
+    let loading = this.loadingCtrl.create({
+      content: 'Please wait...'
+    });
+
+    loading.present();
+
+    setTimeout(() => {
+      loading.dismiss();
+    }, 5000);
+
     this.scanner();
   }
 
