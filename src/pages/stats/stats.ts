@@ -26,30 +26,30 @@ export class StatsPage {
   }
 
   reset() {
-    this.resetstat1();
-    this.resetstat2();
-    this.resetstat3();
+    this.resetstat1(30);
+    this.resetstat2(150);
+    this.resetstat3(573);
   }
 
-  resetstat1(){
+  resetstat1(count:number){
     let interval = setInterval(()=>{
       this.stat1++;
-      if(this.stat1 == 30) clearInterval(interval);
-    },10);
+      if(this.stat1 == count) clearInterval(interval);
+    },1);
   }
 
-  resetstat2(){
+  resetstat2(count:number){
     let interval = setInterval(()=>{
       this.stat2++;
-      if(this.stat2 == 430) clearInterval(interval);
-    },10);
+      if(this.stat2 == count) clearInterval(interval);
+    },1);
   }
 
-  resetstat3(){
+  resetstat3(count:number){
     let interval = setInterval(()=>{
       this.stat3++;
-      if(this.stat3 == 1430) clearInterval(interval);
-    },10);
+      if(this.stat3 == count) clearInterval(interval);
+    },1);
   }
 
   ionViewDidLoad() {
