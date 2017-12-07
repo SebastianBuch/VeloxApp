@@ -1,11 +1,12 @@
 import { Component } from '@angular/core';
-import {AlertController, NavController} from 'ionic-angular';
+import { AlertController, NavController } from 'ionic-angular';
 import { BarcodeScanner, BarcodeScannerOptions } from '@ionic-native/barcode-scanner';
-import {MenuPage} from '../menu/menu';
-import {RegisterPage} from '../register/register';
+import { MenuPage } from '../menu/menu';
+import { RegisterPage } from '../register/register';
 import { ToastController } from 'ionic-angular';
 import { Vibration } from '@ionic-native/vibration';
-import {ReceiptPage} from '../receipt/receipt';
+import { ReceiptPage } from '../receipt/receipt';
+import { ScreenOrientation } from '@ionic-native/screen-orientation';
 
 @Component({
   selector: 'page-home',
@@ -19,8 +20,9 @@ export class HomePage {
               private barcodeScanner: BarcodeScanner,
               private alertCtrl: AlertController,
               private toastCtrl: ToastController,
-              private vibration: Vibration) {
-
+              private vibration: Vibration,
+              private screenOrientation: ScreenOrientation) {
+    this.screenOrientation.lock(this.screenOrientation.ORIENTATIONS.PORTRAIT);
   }
 
   async scanBarcode() {

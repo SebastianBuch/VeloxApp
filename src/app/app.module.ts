@@ -17,6 +17,7 @@ import { ReceiptPage } from '../pages/receipt/receipt';
 import { ScanpromptPage } from '../pages/scanprompt/scanprompt';
 import { NgxQRCodeModule } from 'ngx-qrcode2';
 import { Vibration } from '@ionic-native/vibration';
+import { ScreenOrientation } from '@ionic-native/screen-orientation';
 
 @NgModule({
   declarations: [
@@ -51,7 +52,8 @@ import { Vibration } from '@ionic-native/vibration';
     BarcodeScanner,
     NgxQRCodeModule,
     Vibration,
-    NativeStorage
+    NativeStorage,
+    ScreenOrientation
   ]
 })
 export class AppModule {}
