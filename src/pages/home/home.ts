@@ -28,12 +28,12 @@ export class HomePage {
               private nativeStorage: NativeStorage) {
 
     this.screenOrientation.lock(this.screenOrientation.ORIENTATIONS.PORTRAIT);
-    this.nativeStorage.getItem('scannedShop')
+    this.nativeStorage.getItem('scannedShopone')
       .then(data => this.scannedShop = data, error => console.error(error));
-    //if (this.scannedShop != null) {
+    if (this.scannedShop != null) {
       //this.navCtrl.setRoot(MenuPage);
-      //alert(this.scannedShop);
-    //}
+      alert(this.scannedShop);
+    }
 
   }
 
@@ -42,7 +42,7 @@ export class HomePage {
       // Success! Barcode data is here
       // alert(barcodeData.text);
       if (barcodeData.text === '8719323938014') {
-        this.nativeStorage.setItem('scannedShop', {scannedShop: barcodeData.text})
+        this.nativeStorage.setItem('scannedShopone', {scannedShop: barcodeData.text})
           .then();
         this.navCtrl.setRoot(MenuPage);
       } else {

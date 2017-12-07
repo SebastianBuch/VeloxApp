@@ -20,7 +20,7 @@ export class MenuPage {
               private barcodeScanner: BarcodeScanner,
               private nativeStorage: NativeStorage) {
 
-    this.nativeStorage.getItem('scannedShop')
+    this.nativeStorage.getItem('scannedShopone')
       .then(data => this.scannedShop = data, error => console.error(error));
 
   }
@@ -62,7 +62,7 @@ export class MenuPage {
           text: 'Disconnect',
           handler: () => {
             this.navCtrl.setRoot(HomePage);
-            this.nativeStorage.remove('scannedShop')
+            this.nativeStorage.remove('scannedShopone')
               .then(data => this.scannedShop = data, error => console.error(error));
           }
         }
