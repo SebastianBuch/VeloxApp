@@ -68,6 +68,8 @@ export class MenuPage {
       ]
     });
     alert.present();
+    this.nativeStorage.remove('scannedShop')
+      .then(data => this.scannedShop = data, error => console.error(error));
   }
 
   goToStats() {
