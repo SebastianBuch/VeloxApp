@@ -62,14 +62,13 @@ export class MenuPage {
           text: 'Disconnect',
           handler: () => {
             this.navCtrl.setRoot(HomePage);
-            console.log('Buy clicked');
+            this.nativeStorage.remove('scannedShop')
+              .then(data => this.scannedShop = data, error => console.error(error));
           }
         }
       ]
     });
     alert.present();
-    this.nativeStorage.remove('scannedShop')
-      .then(data => this.scannedShop = data, error => console.error(error));
   }
 
   goToStats() {
