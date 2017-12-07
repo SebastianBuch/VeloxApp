@@ -32,6 +32,7 @@ export class HomePage {
       .then(data => this.scannedShop = data, error => console.error(error));
     if (this.scannedShop != '') {
       this.navCtrl.setRoot(MenuPage);
+      alert(this.scannedShop);
     }
 
   }
