@@ -1,0 +1,9 @@
+diff a/src/pages/scanprompt/scanprompt.ts b/src/pages/scanprompt/scanprompt.ts	(rejected hunks)
+@@ -28,6 +28,7 @@
+ 
+   saveAmount() {
+ 
++
+   }
+ 
+ 
