@@ -17,6 +17,7 @@ export class HomePage {
 
   options: BarcodeScannerOptions;
   enterShopQR: '';
+  scannedShop: '';
 
   constructor(public navCtrl: NavController,
               private barcodeScanner: BarcodeScanner,
@@ -27,6 +28,13 @@ export class HomePage {
               private nativeStorage: NativeStorage) {
 
     this.screenOrientation.lock(this.screenOrientation.ORIENTATIONS.PORTRAIT);
+    this.nativeStorage.getItem('scannedShop')
+      .then(data => this.scannedShop = data, error => console.error(error));
+    if (this.scannedShop = '') {
+
+    } else {
+      this.navCtrl.setRoot(MenuPage);
+    }
 
   }
 
