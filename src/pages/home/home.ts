@@ -29,11 +29,14 @@ export class HomePage {
 
     this.screenOrientation.lock(this.screenOrientation.ORIENTATIONS.PORTRAIT);
     this.nativeStorage.getItem('scannedShopone')
-      .then(data => alert(data.scannedShop), error => console.error(error));
+      .then(data =>{ if (data.scannedShop != '') {
+        this.navCtrl.setRoot(MenuPage);
+    }}, error => console.error(error));
     //if (this.scannedShop != null) {
       //this.navCtrl.setRoot(MenuPage);
       //alert();
     //}
+    //alert(data.scannedShop)
 
   }
 
