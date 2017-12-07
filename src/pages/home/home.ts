@@ -22,7 +22,9 @@ export class HomePage {
               private toastCtrl: ToastController,
               private vibration: Vibration,
               private screenOrientation: ScreenOrientation) {
+
     this.screenOrientation.lock(this.screenOrientation.ORIENTATIONS.PORTRAIT);
+
   }
 
   async scanBarcode() {

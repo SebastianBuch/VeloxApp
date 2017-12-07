@@ -14,7 +14,18 @@ import { NavController, NavParams } from 'ionic-angular';
 })
 export class StatsPage {
 
+  myCount: number;
+
   constructor(public navCtrl: NavController, public navParams: NavParams) {
+    this.myCount = 0;
+    this.reset();
+  }
+
+  reset(){
+    let interval = setInterval(()=>{
+      this.myCount++;
+      if(this.myCount == 50) clearInterval(interval);
+    },100);
   }
 
   ionViewDidLoad() {
