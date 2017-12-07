@@ -31,7 +31,7 @@ export class HomePage {
     this.nativeStorage.getItem('scannedShop')
       .then(data => this.scannedShop = data, error => console.error(error));
     if (this.scannedShop != '') {
-      this.navCtrl.setRoot(MenuPage);
+      //this.navCtrl.setRoot(MenuPage);
       alert(this.scannedShop);
     }
 
