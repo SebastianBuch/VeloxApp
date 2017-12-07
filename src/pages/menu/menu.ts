@@ -12,13 +12,17 @@ import { NativeStorage } from '@ionic-native/native-storage';
 })
 export class MenuPage {
 
-  scanResult = '';
+  scannedShop = '';
 
   constructor(public navCtrl: NavController,
               public navParams: NavParams,
               private alertCtrl: AlertController,
               private barcodeScanner: BarcodeScanner,
               private nativeStorage: NativeStorage) {
+
+    this.nativeStorage.getItem('scannedShop')
+      .then(data => this.scannedShop = data, error => console.error(error));
+
   }
 
   async scanBarcode() {
