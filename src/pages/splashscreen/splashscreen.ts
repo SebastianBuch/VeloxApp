@@ -25,4 +25,8 @@ export class SplashscreenPage {
 
   }
 
+  goToLandingPage() {
+    this.navCtrl.setRoot(HomePage);
+  }
+
 }
