@@ -8,6 +8,7 @@ import { Vibration } from '@ionic-native/vibration';
 import { ReceiptPage } from '../receipt/receipt';
 import { ScreenOrientation } from '@ionic-native/screen-orientation';
 import { NativeStorage } from '@ionic-native/native-storage';
+import { SplashScreen } from '@ionic-native/splash-screen';
 
 @Component({
   selector: 'page-home',
@@ -25,7 +26,8 @@ export class HomePage {
               private toastCtrl: ToastController,
               private vibration: Vibration,
               private screenOrientation: ScreenOrientation,
-              private nativeStorage: NativeStorage) {
+              private nativeStorage: NativeStorage,
+              private splashScreen: SplashScreen) {
 
     this.screenOrientation.lock(this.screenOrientation.ORIENTATIONS.PORTRAIT).then();
 
@@ -34,6 +36,7 @@ export class HomePage {
         this.navCtrl.setRoot(MenuPage);
     }}, error => console.error(error));
 
+    this.splashScreen.hide();
     //alert(data.scannedShop)
 
   }
