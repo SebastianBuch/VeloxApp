@@ -36,7 +36,7 @@ export class HomePage {
         this.navCtrl.setRoot(MenuPage);
     }}, error => console.error(error));
 
-    this.splashScreen.hide();
+    //this.splashScreen.hide();
     //alert(data.scannedShop)
 
   }
