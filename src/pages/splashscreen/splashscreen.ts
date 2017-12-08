@@ -1,12 +1,8 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
-
-/**
- * Generated class for the SplashscreenPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
+import { NativeStorage } from '@ionic-native/native-storage';
+import { MenuPage } from '../menu/menu';
+import {HomePage} from '../home/home';
 
 @Component({
   selector: 'page-splashscreen',
@@ -14,11 +10,22 @@ import { NavController, NavParams } from 'ionic-angular';
 })
 export class SplashscreenPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController,
+              public navParams: NavParams,
+              private nativeStorage: NativeStorage) {
+
+    setTimeout(this.checkIfScannedShop(), 3000);
+
   }
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad SplashscreenPage');
+  checkIfScannedShop() {
+    this.nativeStorage.getItem('scannedShopone')
+      .then(data => { if (data.scannedShop != '') {
+        this.navCtrl.setRoot(MenuPage);
+      } else {
+        this.navCtrl.setRoot(HomePage);
+      }}, error => console.error(error));
+
   }
 
 }
