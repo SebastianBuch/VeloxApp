@@ -17,9 +17,9 @@ export class SplashscreenPage {
     //setTimeout(function () {
       this.nativeStorage.getItem('scannedShopone')
         .then(data => { if (data.scannedShop != '') {
-          this.navCtrl.setRoot(MenuPage);
+          this.navCtrl.setRoot(MenuPage).then();
         } else {
-          this.navCtrl.setRoot(HomePage);
+          this.navCtrl.setRoot(HomePage).then();
         }}, error => console.error(error));
     //}, 3000);
 
