@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 import { NativeStorage } from '@ionic-native/native-storage';
 import { MenuPage } from '../menu/menu';
-import {HomePage} from '../home/home';
+import { HomePage } from '../home/home';
 
 @Component({
   selector: 'page-splashscreen',
@@ -14,11 +14,18 @@ export class SplashscreenPage {
               public navParams: NavParams,
               private nativeStorage: NativeStorage) {
 
-    setTimeout(this.checkIfScannedShop(), 3000);
+    setTimeout(function () {
+      this.nativeStorage.getItem('scannedShopone')
+        .then(data => { if (data.scannedShop != '') {
+          this.navCtrl.setRoot(MenuPage);
+        } else {
+          this.navCtrl.setRoot(HomePage);
+        }}, error => console.error(error));
+    }, 3000);
 
   }
 
-  checkIfScannedShop() {
+  /*checkIfScannedShop() {
     this.nativeStorage.getItem('scannedShopone')
       .then(data => { if (data.scannedShop != '') {
         this.navCtrl.setRoot(MenuPage);
@@ -26,6 +33,6 @@ export class SplashscreenPage {
         this.navCtrl.setRoot(HomePage);
       }}, error => console.error(error));
 
-  }
+  }*/
 
 }
