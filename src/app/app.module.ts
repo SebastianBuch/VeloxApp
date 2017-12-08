@@ -59,6 +59,6 @@ import { AuthProvider } from '../providers/auth/auth';
     NativeStorage,
     ScreenOrientation,
     AuthProvider
-  ]
+]
 })
 export class AppModule {}

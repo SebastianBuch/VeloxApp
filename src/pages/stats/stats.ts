@@ -1,13 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 
-/**
- * Generated class for the StatsPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
-
 @Component({
   selector: 'page-stats',
   templateUrl: 'stats.html',
@@ -23,6 +16,7 @@ export class StatsPage {
     this.stat2 = 0;
     this.stat3 = 0;
     this.reset();
+
   }
 
   reset() {

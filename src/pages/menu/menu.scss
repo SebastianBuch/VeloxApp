@@ -3,26 +3,33 @@ page-menu {
   button {
     font-weight: bold;
     font-size: 35px;
+    z-index: 0;
+    position: relative;
+  }
+
+  p {
+    z-index: 1;
+    position: fixed;
+    top: -1%;
+    left: 1%;
+    font-size: 16px;
+  }
+
+  .buttons {
+    width: 100%;
+    height: 33.3333vh;
+    border-radius: 0;
   }
 
   .scan {
-    width: 100%;
-    height: 33.3333vh;
     background-color: color($colors, primary);
-    border-radius: 0;
   }
 
   .stats {
-    width: 100%;
-    height: 33.3333vh;
     background-color: color($colors, secondary);
-    border-radius: 0;
   }
 
   .discon {
-    width: 100%;
-    height: 33.3333vh;
     background-color: color($colors, danger);
-    border-radius: 0;
   }
 }

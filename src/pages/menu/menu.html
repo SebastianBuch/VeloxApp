@@ -10,7 +10,7 @@
 
 
 <ion-content>
-  <button class="scan" (click)="scanBarcode()">SCAN {{ scannedShop.scannedShop }}</button>
-  <button class="stats" (click)="goToStats()">STATISTICS</button>
-  <button class="discon" (click)="presentConfirm()">DISCONNECT</button>
+  <button class="scan buttons" (click)="scanBarcode()"><p>Connected to: {{ scannedShop.scannedShop }}</p>SCAN</button>
+  <button class="stats buttons" (click)="goToStats()">STATISTICS</button>
+  <button class="discon buttons" (click)="presentConfirm()">DISCONNECT</button>
 </ion-content>

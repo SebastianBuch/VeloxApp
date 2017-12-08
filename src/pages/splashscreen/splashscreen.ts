@@ -3,6 +3,7 @@ import { NavController, NavParams } from 'ionic-angular';
 import { NativeStorage } from '@ionic-native/native-storage';
 import { MenuPage } from '../menu/menu';
 import { HomePage } from '../home/home';
+import { ScreenOrientation } from '@ionic-native/screen-orientation';
 
 @Component({
   selector: 'page-splashscreen',
@@ -16,7 +17,10 @@ export class SplashscreenPage {
 
   constructor(public navCtrl: NavController,
               public navParams: NavParams,
-              private nativeStorage: NativeStorage) {
+              private nativeStorage: NativeStorage,
+              private screenOrientation: ScreenOrientation) {
+
+      this.screenOrientation.lock(this.screenOrientation.ORIENTATIONS.PORTRAIT).then();
 
     this.ionViewLoad();
   }
