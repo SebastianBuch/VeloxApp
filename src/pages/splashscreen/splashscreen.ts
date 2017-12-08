@@ -17,25 +17,13 @@ export class SplashscreenPage {
               public navParams: NavParams,
               private nativeStorage: NativeStorage) {
 
-    setTimeout(function () {
       this.nativeStorage.getItem('scannedShopone')
         .then(data => { if (data.scannedShop != '') {
           this.navCtrl.setRoot(MenuPage).then();
         } else if (data.scannedShop = '') {
           this.navCtrl.setRoot(HomePage).then();
         }}, error => console.error(error));
-    }, 3000);
 
   }
-
-  /*checkIfScannedShop() {
-    this.nativeStorage.getItem('scannedShopone')
-      .then(data => { if (data.scannedShop != '') {
-        this.navCtrl.setRoot(MenuPage);
-      } else {
-        this.navCtrl.setRoot(HomePage);
-      }}, error => console.error(error));
-
-  }*/
 
 }
