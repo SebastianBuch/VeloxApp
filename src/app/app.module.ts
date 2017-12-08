@@ -7,8 +7,8 @@ import { StatusBar } from '@ionic-native/status-bar';
 
 import { IonicStorageModule } from '@ionic/storage';
 import { NativeStorage } from '@ionic-native/native-storage';
-/*import { AngularFireModule } from 'angularfire2';
-import { AngularFireDatabaseModule } from 'angularfire2/database';*/
+import { AngularFireModule } from 'angularfire2';
+import { AngularFireDatabaseModule } from 'angularfire2/database';
 
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
@@ -20,6 +20,16 @@ import { ScanpromptPage } from '../pages/scanprompt/scanprompt';
 import { NgxQRCodeModule } from 'ngx-qrcode2';
 import { Vibration } from '@ionic-native/vibration';
 import { ScreenOrientation } from '@ionic-native/screen-orientation';
+
+export const firebaseConfig = {
+  apiKey: "AIzaSyBb6IS8sAHNKDefiHCGOHUJG6w9uoei0Uc",
+  authDomain: "velox-e581c.firebaseapp.com",
+  databaseURL: "https://velox-e581c.firebaseio.com",
+  projectId: "velox-e581c",
+  storageBucket: "velox-e581c.appspot.com",
+  messagingSenderId: "554354475559"
+};
+AngularFireModule.initializeApp(firebaseConfig);
 
 @NgModule({
   declarations: [
@@ -35,7 +45,9 @@ import { ScreenOrientation } from '@ionic-native/screen-orientation';
     BrowserModule,
     IonicModule.forRoot(MyApp),
     NgxQRCodeModule,
-    IonicStorageModule.forRoot()
+    IonicStorageModule.forRoot(),
+    AngularFireModule.initializeApp(firebaseConfig),
+    AngularFireDatabaseModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -59,10 +71,3 @@ import { ScreenOrientation } from '@ionic-native/screen-orientation';
   ]
 })
 export class AppModule {}
-/*export const firebaseConfig = {
-  apiKey: "AIzaSyDnAX0CQbbsMYuOTJ66ox_F0GwzPM4XPXY",
-  authDomain: "angularfire2-list-example.firebaseapp.com",
-  databaseURL: "https://angularfire2-list-example.firebaseio.com",
-  storageBucket: "",
-  messagingSenderId: "609067141823"
-};*/

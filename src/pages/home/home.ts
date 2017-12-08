@@ -9,6 +9,7 @@ import { ReceiptPage } from '../receipt/receipt';
 import { ScreenOrientation } from '@ionic-native/screen-orientation';
 import { NativeStorage } from '@ionic-native/native-storage';
 import { SplashScreen } from '@ionic-native/splash-screen';
+import { AngularFireDatabase, AngularFireList } from 'angularfire2/database';
 
 @Component({
   selector: 'page-home',
@@ -27,7 +28,8 @@ export class HomePage {
               private vibration: Vibration,
               private screenOrientation: ScreenOrientation,
               private nativeStorage: NativeStorage,
-              private splashScreen: SplashScreen) {
+              private splashScreen: SplashScreen,
+              afDatabase: AngularFireDatabase) {
 
     this.screenOrientation.lock(this.screenOrientation.ORIENTATIONS.PORTRAIT).then();
 
