@@ -56,7 +56,7 @@ import {SplashscreenPage} from '../pages/splashscreen/splashscreen';
     NgxQRCodeModule,
     Vibration,
     NativeStorage,
-    ScreenOrientation
+    ScreenOrientation,
   ]
 })
 export class AppModule {}
