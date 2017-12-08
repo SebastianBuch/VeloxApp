@@ -14,12 +14,12 @@ export class SplashscreenPage {
               public navParams: NavParams,
               private nativeStorage: NativeStorage) {
 
-    setTimeout(function () {
+    //setTimeout(function () {
       //this.nativeStorage.getItem('scannedShopone')
         //.then(data => { if (data.scannedShop != '') {
           this.navCtrl.setRoot(MenuPage).then();
         //}}, error => console.error(error));
-    }, 3000);
+    //}, 3000);
 
   }
 
