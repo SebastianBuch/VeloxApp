@@ -28,7 +28,7 @@ export class HomePage {
               private screenOrientation: ScreenOrientation,
               private nativeStorage: NativeStorage) {
 
-    this.screenOrientation.lock(this.screenOrientation.ORIENTATIONS.PORTRAIT).then();
+    //this.screenOrientation.lock(this.screenOrientation.ORIENTATIONS.PORTRAIT).then();
 
     /*this.nativeStorage.getItem('scannedShopone')
       .then(data => { if (data.scannedShop != '') {
