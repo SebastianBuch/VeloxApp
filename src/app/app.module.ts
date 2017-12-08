@@ -20,6 +20,7 @@ import { ScanpromptPage } from '../pages/scanprompt/scanprompt';
 import { NgxQRCodeModule } from 'ngx-qrcode2';
 import { Vibration } from '@ionic-native/vibration';
 import { ScreenOrientation } from '@ionic-native/screen-orientation';
+import {SplashscreenPage} from '../pages/splashscreen/splashscreen';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { ScreenOrientation } from '@ionic-native/screen-orientation';
     StatsPage,
     RegisterPage,
     ReceiptPage,
-    ScanpromptPage
+    ScanpromptPage,
+    SplashscreenPage
   ],
   imports: [
     BrowserModule,
@@ -45,7 +47,8 @@ import { ScreenOrientation } from '@ionic-native/screen-orientation';
     StatsPage,
     RegisterPage,
     ReceiptPage,
-    ScanpromptPage
+    ScanpromptPage,
+    SplashscreenPage
   ],
   providers: [
     StatusBar,
