@@ -10,19 +10,32 @@ import { HomePage } from '../home/home';
 })
 export class SplashscreenPage {
 
+  splash = true;
+
   scannedShop: '';
 
   constructor(public navCtrl: NavController,
               public navParams: NavParams,
               private nativeStorage: NativeStorage) {
 
-      this.nativeStorage.getItem('scannedShopone')
-        .then(data => { if (data.scannedShop != '') {
-          this.navCtrl.setRoot(MenuPage).then();
-        } else {
-          this.navCtrl.setRoot(HomePage).then();
-        }}, error => console.error(error));
+    this.ionViewLoad();
+  }
 
+  ionViewLoad() {
+    /*this.nativeStorage.getItem('scannedShopone')
+      .then(data => { if (data.scannedShop != '') {
+        this.navCtrl.setRoot(MenuPage).then();
+      } else {
+        this.navCtrl.setRoot(HomePage).then();
+      }}, error => console.error(error));*/
+    setTimeout(this.getNativeStorage(), 2000);
+  }
+
+  getNativeStorage() {
+    this.nativeStorage.getItem('scannedShopone')
+      .then(data => { if (data.scannedShop != '') {
+        this.navCtrl.setRoot(MenuPage);
+      }},error => console.error(error));
   }
 
   goToLandingPage() {

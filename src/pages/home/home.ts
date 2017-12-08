@@ -30,10 +30,10 @@ export class HomePage {
 
     this.screenOrientation.lock(this.screenOrientation.ORIENTATIONS.PORTRAIT).then();
 
-    /*this.nativeStorage.getItem('scannedShopone')
+    this.nativeStorage.getItem('scannedShopone')
       .then(data => { if (data.scannedShop != '') {
         this.navCtrl.setRoot(MenuPage);
-    }}, error => console.error(error));*/
+    }}, error => console.error(error));
 
     //alert(data.scannedShop)
 

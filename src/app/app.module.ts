@@ -19,6 +19,7 @@ import { NgxQRCodeModule } from 'ngx-qrcode2';
 import { Vibration } from '@ionic-native/vibration';
 import { ScreenOrientation } from '@ionic-native/screen-orientation';
 import {SplashscreenPage} from '../pages/splashscreen/splashscreen';
+import { AuthProvider } from '../providers/auth/auth';
 
 @NgModule({
   declarations: [
@@ -56,7 +57,8 @@ import {SplashscreenPage} from '../pages/splashscreen/splashscreen';
     NgxQRCodeModule,
     Vibration,
     NativeStorage,
-    ScreenOrientation
+    ScreenOrientation,
+    AuthProvider
   ]
 })
 export class AppModule {}
