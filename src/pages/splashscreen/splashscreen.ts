@@ -10,16 +10,21 @@ import { HomePage } from '../home/home';
 })
 export class SplashscreenPage {
 
+
+  scannedShop: '';
+
   constructor(public navCtrl: NavController,
               public navParams: NavParams,
               private nativeStorage: NativeStorage) {
 
-    //setTimeout(function () {
-      //this.nativeStorage.getItem('scannedShopone')
-        //.then(data => { if (data.scannedShop != '') {
+    setTimeout(function () {
+      this.nativeStorage.getItem('scannedShopone')
+        .then(data => { if (data.scannedShop != '') {
           this.navCtrl.setRoot(MenuPage).then();
-        //}}, error => console.error(error));
-    //}, 3000);
+        } else if (data.scannedShop = '') {
+          this.navCtrl.setRoot(HomePage).then();
+        }}, error => console.error(error));
+    }, 3000);
 
   }
 
