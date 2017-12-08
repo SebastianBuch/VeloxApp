@@ -9,7 +9,6 @@ import { ReceiptPage } from '../receipt/receipt';
 import { ScreenOrientation } from '@ionic-native/screen-orientation';
 import { NativeStorage } from '@ionic-native/native-storage';
 import { SplashScreen } from '@ionic-native/splash-screen';
-/*import { AngularFireDatabase, AngularFireList } from 'angularfire2/database';*/
 
 @Component({
   selector: 'page-home',

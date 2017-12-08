@@ -7,8 +7,6 @@ import { StatusBar } from '@ionic-native/status-bar';
 
 import { IonicStorageModule } from '@ionic/storage';
 import { NativeStorage } from '@ionic-native/native-storage';
-import { AngularFireModule } from 'angularfire2';
-import { AngularFireDatabaseModule } from 'angularfire2/database';
 
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
@@ -21,16 +19,6 @@ import { NgxQRCodeModule } from 'ngx-qrcode2';
 import { Vibration } from '@ionic-native/vibration';
 import { ScreenOrientation } from '@ionic-native/screen-orientation';
 import {SplashscreenPage} from '../pages/splashscreen/splashscreen';
-
-export const firebaseConfig = {
-  apiKey: "AIzaSyBb6IS8sAHNKDefiHCGOHUJG6w9uoei0Uc",
-  authDomain: "velox-e581c.firebaseapp.com",
-  databaseURL: "https://velox-e581c.firebaseio.com",
-  projectId: "velox-e581c",
-  storageBucket: "velox-e581c.appspot.com",
-  messagingSenderId: "554354475559"
-};
-AngularFireModule.initializeApp(firebaseConfig);
 
 @NgModule({
   declarations: [
@@ -48,8 +36,6 @@ AngularFireModule.initializeApp(firebaseConfig);
     IonicModule.forRoot(MyApp),
     NgxQRCodeModule,
     IonicStorageModule.forRoot(),
-    AngularFireModule.initializeApp(firebaseConfig),
-    AngularFireDatabaseModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
