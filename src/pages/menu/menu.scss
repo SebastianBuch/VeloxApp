@@ -3,6 +3,16 @@ page-menu {
   button {
     font-weight: bold;
     font-size: 35px;
+    z-index: 0;
+    position: relative;
+  }
+
+  p {
+    z-index: 1;
+    position: fixed;
+    top: -1%;
+    left: 1%;
+    font-size: 14px;
   }
 
   .scan {
