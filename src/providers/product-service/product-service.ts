@@ -19,13 +19,8 @@ export class ProductServiceProvider {
     ];
   }
 
-  findProductBarcode(scannedBarcode) {
-    let productFound = this.products.find(p => p.barcodeID === scannedBarcode);
-    if (productFound) {
-      let productID = productFound.barcodeID;
-      let productName = productFound.productName;
-      return productName;
-    }
+  findProduct() {
+    return this.products[0];
   }
 
 }
