@@ -20,10 +20,10 @@ export class ProductServiceProvider {
   }
 
   findProductData(barcode) {
-    let item73 = this.products.filter(function(item) {
+    alert(barcode);
+    /*let item73 = this.products.filter(function(item) {
       return item.barcodeID === barcode;
-    })[0];
-    alert(item73.barcodeID);
+    })[0];*/
     //return this.products[0];
     //let pdata = this.products.filter('filter')(this.products, {'barcodeID':barcode})
   }
