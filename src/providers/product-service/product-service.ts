@@ -23,7 +23,7 @@ export class ProductServiceProvider {
     let item73 = this.products.filter(function(item) {
       return item.barcodeID === barcode;
     })[0];
-    alert(item73.productName);
+    alert(item73.barcodeID);
     //return this.products[0];
     //let pdata = this.products.filter('filter')(this.products, {'barcodeID':barcode})
   }
