@@ -19,8 +19,9 @@ export class ProductServiceProvider {
     ];
   }
 
-  findProduct() {
-    return this.products[0];
+  findProductData(barcode) {
+    return this.products[];
+    //let pdata = this.products.filter('filter')(this.products, {'barcodeID':barcode})
   }
 
 }
