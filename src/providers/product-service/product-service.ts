@@ -76,7 +76,7 @@ export class ProductServiceProvider {
     return Observable.create(observable => {
       this.products.forEach((item, index) => {
         if (item.barcodeID == barcode) {
-          observable.next(this.products[index]);
+          observable.next(this.products[0]);
           observable.complete();
         }
       });
