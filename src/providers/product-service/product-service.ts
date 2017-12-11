@@ -20,7 +20,7 @@ export class ProductServiceProvider {
     ];
   }
 
-  findProductData(barcode) :Observable<ProductData> {
+  findProductData(/*barcode*/) :Observable<ProductData> {
     let productInfo = 0;
     return Observable.create(observable => {
       observable.next(this.products[productInfo]);
