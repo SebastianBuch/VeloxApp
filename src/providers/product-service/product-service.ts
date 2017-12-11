@@ -20,7 +20,7 @@ export class ProductServiceProvider {
     ];
   }
 
-  findProductData(barcode) :Observable<ProductData> {
+  findProductData(barcode) /*:Observable<ProductData>*/ {
     let productFound = this.products.find(p => p.barcodeID === barcode);
     if (productFound) {
       alert(productFound);
