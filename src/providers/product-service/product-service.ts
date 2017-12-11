@@ -61,7 +61,7 @@ export class ProductServiceProvider {
       observable.complete();
     }*/
     this.products.forEach((item, index) => {
-      if(item.barcodeID == barcode) {
+      if (item.barcodeID == barcode) {
         return this.products[index];
       }
     });
@@ -70,5 +70,16 @@ export class ProductServiceProvider {
       observable.next(this.products[productInfo]);
       observable.complete();
     });*/
+  }
+
+  findProductData2(barcode): Observable<ProductData> {
+    return Observable.create(observable => {
+      this.products.forEach((item, index) => {
+        if (item.barcodeID == barcode) {
+          observable.next(this.products[index]);
+          observable.complete();
+        }
+      });
+    });
   }
 }
