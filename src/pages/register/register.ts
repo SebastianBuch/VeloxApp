@@ -46,7 +46,7 @@ export class RegisterPage {
         dateAndID: this.qrData
       })
         .then(
-          () => console.log('Stored item!'),
+          () => this.saveQRtoDB(this.qrData),
           error => console.error('Error storing item', error)
         );
       this.navCtrl.push(ReceiptPage);
@@ -59,6 +59,10 @@ export class RegisterPage {
       duration: 3000,
       position: 'top'
     }).present();
+  }
+
+  saveQRtoDB(qrData:string) {
+
   }
 
 }

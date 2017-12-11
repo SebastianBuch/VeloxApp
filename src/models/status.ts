@@ -1,8 +1,8 @@
 export class Status {
-  QR: [
-    {
-      barcode: string,
-      amount: number
-    }
+  qr: [
+      {
+        barcode: string,
+        amount: number
+      }
     ]
 }
