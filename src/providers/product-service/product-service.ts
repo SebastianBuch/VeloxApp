@@ -48,6 +48,7 @@ export class ProductServiceProvider {
     return Observable.create(observable => {
       this.getAllProducts().subscribe(allProducts => {
         let productFound = allProducts.find(p => p.barcodeID === products.barcodeID);
+        alert('bitch');
           observable.next(productFound);
           observable.complete();
       })
