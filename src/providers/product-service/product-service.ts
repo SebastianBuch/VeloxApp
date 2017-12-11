@@ -44,7 +44,7 @@ export class ProductServiceProvider {
     });
   }*/
 
-  findProductData()/*: Observable<ProductData>*/ {
+  findProductData(): Observable<ProductData> {
     /*return Observable.create(observable => {
       this.getAllProducts().subscribe(allProducts => {
         let productFound = allProducts.find(p => p.barcodeID === products.barcodeID);
