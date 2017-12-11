@@ -32,7 +32,7 @@ export class MenuPage {
       this.nativeStorage.setItem('scannedResult', {productData: barcodeData.text.toString()})
         .then( () => console.log('Stored item!'), error => console.error('Error storing item'));
       console.log(barcodeData.text);
-      this.navCtrl.push(ScanpromptPage);
+      this.navCtrl.push(ScanpromptPage).then();
     }, (err) => {
       // An error occurred
     });
