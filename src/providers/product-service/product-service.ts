@@ -21,9 +21,9 @@ export class ProductServiceProvider {
   }
 
   findProductData(barcode) :Observable<ProductData> {
-    //let productInfo = 0;
+    let productInfo = 0;
     return Observable.create(observable => {
-      observable.next(/*this.products[productInfo]*/alert(barcode));
+      observable.next(this.products[productInfo]);
       observable.complete();
     })
   }
