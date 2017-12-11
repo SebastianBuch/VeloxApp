@@ -17,6 +17,7 @@ export class ScanpromptPage {
 
   findProductData: ProductData;
 
+
   constructor(public navCtrl: NavController,
               public navParams: NavParams,
               private nativeStorage: NativeStorage,
