@@ -21,6 +21,7 @@ import { ScreenOrientation } from '@ionic-native/screen-orientation';
 import {SplashscreenPage} from '../pages/splashscreen/splashscreen';
 import { AuthProvider } from '../providers/auth/auth';
 import { ProductServiceProvider } from '../providers/product-service/product-service';
+import { StatusProvider } from '../providers/status/status';
 
 @NgModule({
   declarations: [
@@ -60,7 +61,8 @@ import { ProductServiceProvider } from '../providers/product-service/product-ser
     NativeStorage,
     ScreenOrientation,
     AuthProvider,
-    ProductServiceProvider
+    ProductServiceProvider,
+    StatusProvider
 ]
 })
 export class AppModule {}
