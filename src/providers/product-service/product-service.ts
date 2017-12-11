@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { ProductData} from '../../models/products';
 import {Observable} from 'rxjs/Observable';
+import {observable} from 'rxjs/symbol/observable';
 
 @Injectable()
 export class ProductServiceProvider {
@@ -20,16 +21,28 @@ export class ProductServiceProvider {
     ];
   }
 
-  findProductData(barcode) /*:Observable<ProductData>*/ {
+  findProductData(barcode) :Observable<ProductData> {
+    return Observable.create(observable => {
     let productFound = this.products.find(p => p.barcodeID === barcode);
     if (productFound) {
-      alert(productFound);
+      observable.next(productFound);
+      observable.complete();
     }
     /*let productInfo = 0;
     return Observable.create(observable => {
       observable.next(this.products[productInfo]alert(barcode));
       observable.complete();
     })*/
+  });
   }
+
+
+
+
+
+
+
+
+
 
 }
