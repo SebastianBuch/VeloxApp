@@ -11,8 +11,6 @@
   <p>Shop ID: {{ receiptData.shopIDdata }}</p>
   <p>Date: {{ receiptData.datadate}}</p>
   <p>{{ receiptData.dateAndID }}</p>
-  <p>Lars Tut: {{ registerData.shopID }}</p>
-  <p>Lars Tut: {{ registerData.statusDate[1] }}</p>
   <div class="centerreceipt">
     <ngx-qrcode [qrc-value]="receiptData.dateAndID"></ngx-qrcode>
     <button ion-button (click)="sendMail()" color="secondary">Send to Mail</button>

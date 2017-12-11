@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { ProductData} from '../../models/products';
+import {Observable} from 'rxjs/Observable';
 
 @Injectable()
 export class ProductServiceProvider {
@@ -19,8 +20,12 @@ export class ProductServiceProvider {
     ];
   }
 
-  findProductData() {
-    return this.products[0];
+  findProductData() :Observable<ProductData> {
+    let productInfo = 0;
+    return Observable.create(observable => {
+      observable.next(this.products[productInfo]);
+      observable.complete();
+    })
   }
 
 }

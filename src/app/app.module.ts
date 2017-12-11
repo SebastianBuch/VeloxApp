@@ -20,7 +20,6 @@ import { Vibration } from '@ionic-native/vibration';
 import { ScreenOrientation } from '@ionic-native/screen-orientation';
 import {SplashscreenPage} from '../pages/splashscreen/splashscreen';
 import { AuthProvider } from '../providers/auth/auth';
-import { ShopServiceProvider } from '../providers/shop-service/shop-service';
 import { ProductServiceProvider } from '../providers/product-service/product-service';
 
 @NgModule({
@@ -61,7 +60,6 @@ import { ProductServiceProvider } from '../providers/product-service/product-ser
     NativeStorage,
     ScreenOrientation,
     AuthProvider,
-    ShopServiceProvider,
     ProductServiceProvider
 ]
 })
