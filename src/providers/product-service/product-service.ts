@@ -10,7 +10,7 @@ export class ProductServiceProvider {
   products: ProductData[];
 
   constructor(private storage: Storage) {
-    this.products = [
+    /*this.products = [
       {
         barcodeID: '5701098025269',
         productName: 'Brillerens'
@@ -19,7 +19,7 @@ export class ProductServiceProvider {
         barcodeID: '8719323928014',
         productName: 'Sko'
       }
-    ];
+    ];*/
   }
 
   getAllProducts() :Observable<ProductData[]> {
@@ -48,8 +48,7 @@ export class ProductServiceProvider {
     return Observable.create(observable => {
       this.getAllProducts().subscribe(allProducts => {
         let productFound = allProducts.find(p => p.barcodeID === products.barcodeID);
-        alert('bitch');
-          observable.next(productFound);
+          observable.next(this.products.indexOf(productFound));
           observable.complete();
       })
     })
