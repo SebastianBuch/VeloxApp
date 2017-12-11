@@ -1,4 +1,4 @@
 export class ProductData {
-  barcodeID: number;
+  barcodeID: string;
   productName: string;
 }

@@ -10,20 +10,20 @@ export class ProductServiceProvider {
   constructor() {
     this.products = [
       {
-        barcodeID: 5701098025269,
+        barcodeID: '5701098025269',
         productName: 'Brillerens'
       },
       {
-        barcodeID: 8719323928014,
+        barcodeID: '8719323928014',
         productName: 'Sko'
       }
     ];
   }
 
-  findProductData(/*barcode*/) :Observable<ProductData> {
-    let productInfo = 0;
+  findProductData(barcode) :Observable<ProductData> {
+    //let productInfo = 0;
     return Observable.create(observable => {
-      observable.next(this.products[productInfo]);
+      observable.next(/*this.products[productInfo]*/alert(barcode));
       observable.complete();
     })
   }
