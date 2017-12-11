@@ -10,7 +10,7 @@ export class ProductServiceProvider {
   products: ProductData[];
 
   constructor(private storage: Storage) {
-    /*this.products = [
+    this.products = [
       {
         barcodeID: '5701098025269',
         productName: 'Brillerens'
@@ -19,10 +19,10 @@ export class ProductServiceProvider {
         barcodeID: '8719323928014',
         productName: 'Sko'
       }
-    ];*/
+    ];
   }
 
-  getAllProducts() :Observable<ProductData[]> {
+  /*getAllProducts() :Observable<ProductData[]> {
     return Observable.create(observable => {
       this.storage.get('products').then(products => {
         if (!products) {
@@ -42,17 +42,16 @@ export class ProductServiceProvider {
         observable.complete()
       });
     });
-  }
+  }*/
 
-  findProductData(products: ProductData) :Observable<ProductData> {
-    return Observable.create(observable => {
+  findProductData(/*products: ProductData*/): Observable<ProductData> {
+    /*return Observable.create(observable => {
       this.getAllProducts().subscribe(allProducts => {
         let productFound = allProducts.find(p => p.barcodeID === products.barcodeID);
           observable.next(this.products.indexOf(productFound));
           observable.complete();
       })
-    })
-
+    })*/
 
 
     /*return Observable.create(observable => {
@@ -60,22 +59,11 @@ export class ProductServiceProvider {
     if (productFound) {
       observable.next(productFound);
       observable.complete();
-    }
+    }*/
     let productInfo = 0;
     return Observable.create(observable => {
-      observable.next(this.products[productInfo]alert(barcode));
+      observable.next(this.products[productInfo]);
       observable.complete();
-    })
-  });*/
+    });
   }
-
-
-
-
-
-
-
-
-
-
 }
