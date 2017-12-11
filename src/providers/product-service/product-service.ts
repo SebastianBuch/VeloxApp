@@ -44,7 +44,7 @@ export class ProductServiceProvider {
     });
   }*/
 
-  /*findProductData(barcode)/*: Observable<ProductData> {*/
+  findProductData()/*: Observable<ProductData>*/ {
     /*return Observable.create(observable => {
       this.getAllProducts().subscribe(allProducts => {
         let productFound = allProducts.find(p => p.barcodeID === products.barcodeID);
@@ -64,15 +64,15 @@ export class ProductServiceProvider {
       if (item.barcodeID == barcode) {
         return this.products[index];
       }
-    });
-    /*let productInfo = 0;
+    });*/
+    let productInfo = 0;
     return Observable.create(observable => {
       observable.next(this.products[productInfo]);
       observable.complete();
     });
-  }*/
+  }
 
-  findProductData2(barcode): Observable<ProductData> {
+  /*findProductData2(barcode): Observable<ProductData> {
     return Observable.create(observable => {
       this.products.forEach((item, index) => {
         if (item.barcodeID == barcode) {
@@ -81,5 +81,5 @@ export class ProductServiceProvider {
         }
       });
     });
-  }
+  }*/
 }

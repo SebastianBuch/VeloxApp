@@ -28,7 +28,8 @@ export class ScanpromptPage {
 
     this.nativeStorage.getItem('scannedResult')
       //.then(data => this.productData = data, error => console.error(error));
-      .then(data => productService.findProductData2(data).subscribe(productInfo => {
+      //.then(data => productService.findProductData2(data).subscribe(productInfo => {
+      .then(data => productService.findProductData().subscribe(productInfo => {
         this.findProductData = productInfo;
       }), error => console.error(error));
 
