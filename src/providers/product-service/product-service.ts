@@ -20,12 +20,16 @@ export class ProductServiceProvider {
     ];
   }
 
-  findProductData(/*barcode*/) :Observable<ProductData> {
-    let productInfo = 0;
+  findProductData(barcode) :Observable<ProductData> {
+    let productFound = this.products.find(p => p.barcodeID === barcode);
+    if (productFound) {
+      alert(productFound);
+    }
+    /*let productInfo = 0;
     return Observable.create(observable => {
-      observable.next(this.products[productInfo]/*alert(barcode)*/);
+      observable.next(this.products[productInfo]alert(barcode));
       observable.complete();
-    })
+    })*/
   }
 
 }
