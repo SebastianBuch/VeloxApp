@@ -12,11 +12,11 @@ export class ProductServiceProvider {
   constructor(private storage: Storage) {
     this.products = [
       {
-        barcodeID: '5701098025269',
+        barcodeID: 5701098025269,
         productName: 'Brillerens'
       },
       {
-        barcodeID: '8719323928014',
+        barcodeID: 8719323928014,
         productName: 'Sko'
       }
     ];
@@ -44,7 +44,7 @@ export class ProductServiceProvider {
     });
   }*/
 
-  findProductData(barcode)/*: Observable<ProductData>*/ {
+  /*findProductData(barcode)/*: Observable<ProductData> {*/
     /*return Observable.create(observable => {
       this.getAllProducts().subscribe(allProducts => {
         let productFound = allProducts.find(p => p.barcodeID === products.barcodeID);
@@ -60,7 +60,7 @@ export class ProductServiceProvider {
       observable.next(productFound);
       observable.complete();
     }*/
-    this.products.forEach((item, index) => {
+    /*this.products.forEach((item, index) => {
       if (item.barcodeID == barcode) {
         return this.products[index];
       }
@@ -69,8 +69,8 @@ export class ProductServiceProvider {
     return Observable.create(observable => {
       observable.next(this.products[productInfo]);
       observable.complete();
-    });*/
-  }
+    });
+  }*/
 
   findProductData2(barcode): Observable<ProductData> {
     return Observable.create(observable => {
