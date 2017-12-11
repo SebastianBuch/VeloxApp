@@ -29,7 +29,7 @@ export class MenuPage {
     this.barcodeScanner.scan().then((barcodeData) => {
       // Success! Barcode data is here
       // alert(barcodeData.text);
-      this.nativeStorage.setItem('scannedResult', {productData: barcodeData.text})
+      this.nativeStorage.setItem('scannedResult', {productData: barcodeData.text.toString()})
         .then( () => console.log('Stored item!'), error => console.error('Error storing item'));
       console.log(barcodeData.text);
       this.navCtrl.push(ScanpromptPage);
