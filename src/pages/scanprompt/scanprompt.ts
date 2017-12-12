@@ -37,7 +37,6 @@ export class ScanpromptPage {
       /*.then(data => productService.findProductData2(data).subscribe(productInfo => {
         this.findProductData = productInfo;
       }), error => console.error(error));*/
-      alert(this.productData);
 
 
     productService.findProductData().subscribe(productInfo => {
