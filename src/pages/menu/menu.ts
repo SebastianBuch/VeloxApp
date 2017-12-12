@@ -22,36 +22,21 @@ export class MenuPage {
               private nativeStorage: NativeStorage,
               private storage: Storage) {
 
-    this.storage.get('scannedShopeone')
-      .then(data => this.scannedShop = data);
-
-    /*this.nativeStorage.getItem('scannedShopone')
-      .then(data => this.scannedShop = data, error => console.error(error));*/
+    this.nativeStorage.getItem('scannedShopone')
+      .then(data => this.scannedShop = data, error => console.error(error));
 
   }
 
   async scanBarcode() {
     this.barcodeScanner.scan().then((barcodeData) => {
-      this.storage.set('scannedResult', barcodeData.text.toString());
-      this.navCtrl.push(ScanpromptPage).then();
-        // Success! Barcode data is here
-      // alert(barcodeData.text);
-      /*this.nativeStorage.setItem('scannedResult', {productData: barcodeData.text.toString()})
+      this.nativeStorage.setItem('scannedResult', {productData: barcodeData.text.toString()})
         .then( () => console.log('Stored item!'), error => console.error('Error storing item'));
       console.log(barcodeData.text);
       this.navCtrl.push(ScanpromptPage).then();
     }, (err) => {
-      // An error occurred*/
+      // An error occurred
     });
   }
-
-  /*async scanBarcode() {
-    this.scanResult = await this.barcodeScanner.scan();
-    this.navCtrl.push(ScanpromptPage);
-    this.nativeStorage.setItem('scannedResult', {productAmount: this.scanResult})
-      .then( () => console.log('Stored item!'), error => console.error('Error storing item'));
-    console.log(this.scanResult);
-  }*/
 
   presentConfirm() {
     let alert = this.alertCtrl.create({

@@ -28,15 +28,8 @@ export class ScanpromptPage {
               private productService: ProductServiceProvider,
               private storage: Storage) {
 
-
-    this.storage.get('scannedResult').
-    then(data => this.productData = data);
-
-    /*this.nativeStorage.getItem('scannedResult')
+    this.nativeStorage.getItem('scannedResult')
       .then(data => this.productData = data, error => console.error(error));
-      /*.then(data => productService.findProductData2(data).subscribe(productInfo => {
-        this.findProductData = productInfo;
-      }), error => console.error(error));*/
 
 
     productService.findProductData().subscribe(productInfo => {
@@ -58,13 +51,12 @@ export class ScanpromptPage {
 
   scanner() {
     this.barcodeScanner.scan().then((barcodeData) => {
-      this.storage.set('scannedResult', barcodeData.text);
       // Success! Barcode data is here
-      /*this.nativeStorage.setItem('scannedResult', {productData: barcodeData.text})
+      this.nativeStorage.setItem('scannedResult', {productData: barcodeData.text})
         .then( () => console.log('Stored item!'), error => console.error('Error storing item'));
       console.log(barcodeData.text);
       this.navCtrl.push(ScanpromptPage);
-    }, (err) => {*/
+    }, (err) => {
       // An error occurred
     });
   }
