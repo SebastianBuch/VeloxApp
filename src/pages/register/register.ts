@@ -4,6 +4,7 @@ import { ReceiptPage } from '../receipt/receipt';
 import { NativeStorage } from '@ionic-native/native-storage';
 import { ToastController } from 'ionic-angular';
 import { Storage } from '@ionic/storage';
+import {Status} from '../../models/status';
 
 @Component({
   selector: 'page-register',
@@ -16,6 +17,7 @@ export class RegisterPage {
   qrDataDate = '';
   createdCode = '';
   todayDate = new Date();
+  statusliste = Status;
 
   constructor(public navCtrl: NavController,
               public navParams: NavParams,
