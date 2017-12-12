@@ -9,7 +9,7 @@ export class StatusProvider {
   }
 
   saveQRtoDB(data:string) {
-    alert(data);
+    alert('some message');
   }
 
 }
