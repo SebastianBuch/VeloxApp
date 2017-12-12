@@ -8,4 +8,8 @@ export class StatusProvider {
     console.log('Hello StatusProvider Provider');
   }
 
+  saveQRtoDB(data:string) {
+    alert(data);
+  }
+
 }
