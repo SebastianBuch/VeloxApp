@@ -65,7 +65,7 @@ export class RegisterPage {
   }
 
   saveQRtoDB(data:string) {
-    alert('test');
+    alert(data.toString());
   }
 
 }
