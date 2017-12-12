@@ -5,6 +5,7 @@ import { BarcodeScanner, BarcodeScannerOptions } from '@ionic-native/barcode-sca
 import { ToastController } from 'ionic-angular';
 import { ProductServiceProvider } from '../../providers/product-service/product-service';
 import { ProductData } from '../../models/products';
+import { Storage } from '@ionic/storage';
 
 @Component({
   selector: 'page-scanprompt',
@@ -24,9 +25,14 @@ export class ScanpromptPage {
               private barcodeScanner: BarcodeScanner,
               private toastCtrl: ToastController,
               public loadingCtrl: LoadingController,
-              private productService: ProductServiceProvider) {
+              private productService: ProductServiceProvider,
+              private storage: Storage) {
 
-    this.nativeStorage.getItem('scannedResult')
+
+    this.storage.get('scannedResult').
+    then(data => this.productData = data);
+
+    /*this.nativeStorage.getItem('scannedResult')
       .then(data => this.productData = data, error => console.error(error));
       /*.then(data => productService.findProductData2(data).subscribe(productInfo => {
         this.findProductData = productInfo;
@@ -52,12 +58,13 @@ export class ScanpromptPage {
 
   scanner() {
     this.barcodeScanner.scan().then((barcodeData) => {
+      this.storage.set('scannedResult', barcodeData.text);
       // Success! Barcode data is here
-      this.nativeStorage.setItem('scannedResult', {productData: barcodeData.text})
+      /*this.nativeStorage.setItem('scannedResult', {productData: barcodeData.text})
         .then( () => console.log('Stored item!'), error => console.error('Error storing item'));
       console.log(barcodeData.text);
       this.navCtrl.push(ScanpromptPage);
-    }, (err) => {
+    }, (err) => {*/
       // An error occurred
     });
   }

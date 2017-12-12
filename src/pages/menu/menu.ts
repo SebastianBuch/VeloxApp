@@ -5,6 +5,7 @@ import {HomePage} from '../home/home';
 import {StatsPage} from '../stats/stats';
 import { ScanpromptPage } from '../scanprompt/scanprompt';
 import { NativeStorage } from '@ionic-native/native-storage';
+import { Storage } from '@ionic/storage';
 
 @Component({
   selector: 'page-menu',
@@ -18,23 +19,29 @@ export class MenuPage {
               public navParams: NavParams,
               private alertCtrl: AlertController,
               private barcodeScanner: BarcodeScanner,
-              private nativeStorage: NativeStorage) {
+              private nativeStorage: NativeStorage,
+              private storage: Storage) {
 
-    this.nativeStorage.getItem('scannedShopone')
-      .then(data => this.scannedShop = data, error => console.error(error));
+    this.storage.get('scannedShopeone')
+      .then(data => this.scannedShop = data);
+
+    /*this.nativeStorage.getItem('scannedShopone')
+      .then(data => this.scannedShop = data, error => console.error(error));*/
 
   }
 
   async scanBarcode() {
     this.barcodeScanner.scan().then((barcodeData) => {
-      // Success! Barcode data is here
+      this.storage.set('scannedResult', barcodeData.text.toString());
+      this.navCtrl.push(ScanpromptPage).then();
+        // Success! Barcode data is here
       // alert(barcodeData.text);
-      this.nativeStorage.setItem('scannedResult', {productData: barcodeData.text.toString()})
+      /*this.nativeStorage.setItem('scannedResult', {productData: barcodeData.text.toString()})
         .then( () => console.log('Stored item!'), error => console.error('Error storing item'));
       console.log(barcodeData.text);
       this.navCtrl.push(ScanpromptPage).then();
     }, (err) => {
-      // An error occurred
+      // An error occurred*/
     });
   }
 
