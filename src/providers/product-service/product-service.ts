@@ -30,7 +30,7 @@ export class ProductServiceProvider {
     });
   }
 
-  /*findProductData2(barcode): Observable<ProductData> {
+  findProductData2(barcode): Observable<ProductData> {
     return Observable.create(observable => {
       this.products.forEach((item, index) => {
         if (item.barcodeID == barcode) {
@@ -39,5 +39,5 @@ export class ProductServiceProvider {
         }
       });
     });
-  }*/
+  }
 }
