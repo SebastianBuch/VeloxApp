@@ -29,7 +29,7 @@ export class ScanpromptPage {
               private storage: Storage) {
 
     this.nativeStorage.getItem('scannedResult')
-      .then(data => alert(data[1]), error => console.error(error));
+      .then(data => alert(data), error => console.error(error));
 
 
     productService.findProductData().subscribe(productInfo => {
