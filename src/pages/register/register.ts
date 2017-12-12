@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
-import {ReceiptPage} from '../receipt/receipt';
+import { ReceiptPage } from '../receipt/receipt';
 import { NativeStorage } from '@ionic-native/native-storage';
 import { ToastController } from 'ionic-angular';
+import { Storage } from '@ionic/storage';
 
 @Component({
   selector: 'page-register',
@@ -19,7 +20,8 @@ export class RegisterPage {
   constructor(public navCtrl: NavController,
               public navParams: NavParams,
               private nativeStorage: NativeStorage,
-              private toastCtrl: ToastController) {
+              private toastCtrl: ToastController,
+              private storage: Storage) {
     console.log(this.todayDate.getDate(), this.todayDate.getMonth()+1, this.todayDate.getFullYear());
   }
 
@@ -61,7 +63,7 @@ export class RegisterPage {
     }).present();
   }
 
-  saveQRtoDB(qrData:string) {
+  saveQRtoDB(data:string) {
 
   }
 
