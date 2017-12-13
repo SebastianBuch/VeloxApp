@@ -40,8 +40,8 @@ export class HomePage {
   async scanBarcode() {
     this.barcodeScanner.scan().then((barcodeData) => {
       // Success! Barcode data is here
-      this.test = this.statusService.checkScan(barcodeData.text);
-      if ( this.test == true /*Check through array if status data exists*/ ) {
+      this.statusService.checkScan(barcodeData.text);
+      if ( this.statusService.checkScan(barcodeData.text) == true /*Check through array if status data exists*/ ) {
         this.nativeStorage.setItem('scannedShopone', {scannedShop: barcodeData.text})
           .then();
         this.navCtrl.setRoot(MenuPage).then();
