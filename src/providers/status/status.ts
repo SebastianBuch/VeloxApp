@@ -1,4 +1,3 @@
-import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { qrID } from '../../models/qr-id';
 import { AmountOfProducts } from '../../models/amount';
@@ -9,7 +8,7 @@ export class StatusProvider {
   qrList: qrID[];
   amountList: AmountOfProducts[];
 
-  constructor(public http: HttpClient) {
+  constructor() {
     console.log('Hello StatusProvider Provider');
     this.qrList = [
       {
