@@ -10,13 +10,12 @@ export class StatusProvider {
   amountList: AmountOfProducts[];
 
   constructor() {
-    console.log('Hello StatusProvider Provider');
     this.qrList = [
       {
-        qr: 'netto15-2018-01-13'
+        fullqr: 'netto15-2018-01-13'
       },
       {
-        qr: 'netto10-2018-01-16'
+        fullqr: 'netto10-2018-01-16'
       }
     ];
 
@@ -34,9 +33,10 @@ export class StatusProvider {
     ]
   }
 
-  saveQRtoDB(data:string): Observable<qrID> {
+  saveQRtoDB(data:qrID): Observable<qrID> {
     return Observable.create(observable => {
-      observable.next(data);
+      this.qrList.push(data);
+      observable.next(console.log(this.qrList));
       observable.complete();
     });
   }

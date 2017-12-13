@@ -1,3 +1,3 @@
 export class qrID {
-  qr: string;
+  fullqr: string;
 }

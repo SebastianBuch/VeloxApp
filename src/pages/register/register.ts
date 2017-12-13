@@ -24,7 +24,7 @@ export class RegisterPage {
               private toastCtrl: ToastController,
               private storage: Storage,
               private statusService: StatusProvider) {
-    console.log(this.todayDate.getDate(), this.todayDate.getMonth()+1, this.todayDate.getFullYear());
+
   }
 
   createCode() {
