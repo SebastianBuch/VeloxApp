@@ -46,9 +46,9 @@ export class StatusProvider {
   }
 
   checkScan(scannedCode:string): boolean {
-    for (let qrCode in this.qrList) {
-      if (qrCode == scannedCode) {
-        alert(qrCode);
+    for (let qrCode of this.qrList) {
+      if (qrCode.fullqr == scannedCode) {
+        alert(qrCode.fullqr);
         this.result = true;
         break;
       } else {
