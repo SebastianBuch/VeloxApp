@@ -7,6 +7,7 @@ import { ToastController } from 'ionic-angular';
 import { ReceiptPage } from '../receipt/receipt';
 import { ScreenOrientation } from '@ionic-native/screen-orientation';
 import { NativeStorage } from '@ionic-native/native-storage';
+import { StatusProvider } from '../../providers/status/status';
 
 @Component({
   selector: 'page-home',
@@ -23,7 +24,8 @@ export class HomePage {
               private alertCtrl: AlertController,
               private toastCtrl: ToastController,
               private screenOrientation: ScreenOrientation,
-              private nativeStorage: NativeStorage) {
+              private nativeStorage: NativeStorage,
+              private statusService: StatusProvider) {
 
     //this.screenOrientation.lock(this.screenOrientation.ORIENTATIONS.PORTRAIT).then();
 
@@ -37,7 +39,7 @@ export class HomePage {
   async scanBarcode() {
     this.barcodeScanner.scan().then((barcodeData) => {
       // Success! Barcode data is here
-      if (barcodeData.text === '8719323938014'/* Check through array if status data exists */) {
+      if (this.statusService.checkScan(barcodeData.text)/*barcodeData.text === '8719323938014' Check through array if status data exists */) {
         this.nativeStorage.setItem('scannedShopone', {scannedShop: barcodeData.text})
           .then();
         this.navCtrl.setRoot(MenuPage).then();

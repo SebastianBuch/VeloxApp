@@ -41,4 +41,12 @@ export class StatusProvider {
     });
   }
 
+  checkScan(scannedCode:string){
+        this.qrList.forEach((item, index) => {
+          if (item.fullqr == scannedCode) {
+            alert(item.fullqr);
+          }
+        });
+      }
+
 }
