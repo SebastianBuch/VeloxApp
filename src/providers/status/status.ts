@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { qrID } from '../../models/qr-id';
 import { AmountOfProducts } from '../../models/amount';
+import { Observable } from 'rxjs/Observable';
 
 @Injectable()
 export class StatusProvider {
@@ -33,8 +34,11 @@ export class StatusProvider {
     ]
   }
 
-  saveQRtoDB(data:string) {
-    alert(data);
+  saveQRtoDB(data:string): Observable<qrID> {
+    return Observable.create(observable => {
+      observable.next(data);
+      observable.complete();
+    });
   }
 
 }
