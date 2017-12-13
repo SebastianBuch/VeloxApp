@@ -29,10 +29,10 @@ export class HomePage {
               private statusService: StatusProvider) {
 
     this.nativeStorage.getItem('scannedShopone')
-      .then(data => { if (data.scannedShop != '') {
-        this.navCtrl.setRoot(MenuPage).then();
-    }}, /*error => alert(error)*/);
-
+      .then(data => { this.scannedShop = data }, /*error => alert(error)*/);
+    if (this.scannedShop != '') {
+      this.navCtrl.setRoot(MenuPage).then();
+    }
   }
 
   async scanBarcode() {
