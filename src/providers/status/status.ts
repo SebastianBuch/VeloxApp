@@ -46,7 +46,19 @@ export class StatusProvider {
   }
 
   checkScan(scannedCode:string): boolean {
-        this.qrList.forEach((item) => {
+    for (let qrCode in this.qrList) {
+      if (qrCode == scannedCode) {
+        alert(qrCode);
+        this.result = true;
+        break;
+      } else {
+        alert('failed to connect');
+        this.result = false;
+      }
+      }
+      return this.result;
+    }
+        /*this.qrList.forEach((item) => {
           if (item.fullqr == scannedCode) {
             alert(item.fullqr);
             this.result = true;
@@ -56,6 +68,6 @@ export class StatusProvider {
           }
         });
         return this.result;
-      }
+      }*/
 
 }
