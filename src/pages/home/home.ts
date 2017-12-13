@@ -4,11 +4,9 @@ import { BarcodeScanner, BarcodeScannerOptions } from '@ionic-native/barcode-sca
 import { MenuPage } from '../menu/menu';
 import { RegisterPage } from '../register/register';
 import { ToastController } from 'ionic-angular';
-import { Vibration } from '@ionic-native/vibration';
 import { ReceiptPage } from '../receipt/receipt';
 import { ScreenOrientation } from '@ionic-native/screen-orientation';
 import { NativeStorage } from '@ionic-native/native-storage';
-import { SplashScreen } from '@ionic-native/splash-screen';
 
 @Component({
   selector: 'page-home',
@@ -24,7 +22,6 @@ export class HomePage {
               private barcodeScanner: BarcodeScanner,
               private alertCtrl: AlertController,
               private toastCtrl: ToastController,
-              private vibration: Vibration,
               private screenOrientation: ScreenOrientation,
               private nativeStorage: NativeStorage) {
 
@@ -35,14 +32,11 @@ export class HomePage {
         this.navCtrl.setRoot(MenuPage);
     }}, error => console.error(error));
 
-    //alert(data.scannedShop)
-
   }
 
   async scanBarcode() {
     this.barcodeScanner.scan().then((barcodeData) => {
       // Success! Barcode data is here
-      // alert(barcodeData.text);
       if (barcodeData.text === '8719323938014'/* Check through array if status data exists */) {
         this.nativeStorage.setItem('scannedShopone', {scannedShop: barcodeData.text})
           .then();
@@ -98,7 +92,6 @@ export class HomePage {
                   duration: 3000,
                   position: 'top'
                 }).present();
-              this.vibration.vibrate(1000);
               // toast end
               return false;
             }
