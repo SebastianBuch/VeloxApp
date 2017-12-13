@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
-import { ProductData} from '../../models/products';
-import {Observable} from 'rxjs/Observable';
-import {observable} from 'rxjs/symbol/observable';
+import { ProductData } from '../../models/products';
+import { Observable } from 'rxjs/Observable';
 import { Storage } from '@ionic/storage';
 
 @Injectable()
