@@ -18,7 +18,7 @@ export class HomePage {
   options: BarcodeScannerOptions;
   enterShopQR: '';
   scannedShop: '';
-  test: boolean;
+  test: boolean = false;
 
   constructor(public navCtrl: NavController,
               private barcodeScanner: BarcodeScanner,
