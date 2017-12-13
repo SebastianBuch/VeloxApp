@@ -43,11 +43,12 @@ export class StatusProvider {
   }
 
   checkScan(scannedCode:string): boolean {
-        this.qrList.forEach((item, index) => {
+        this.qrList.forEach((item) => {
           if (item.fullqr == scannedCode) {
             alert(item.fullqr);
             this.result = true;
           } else {
+            alert('failed to connect');
             this.result = false;
           }
         });
