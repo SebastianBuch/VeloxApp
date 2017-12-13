@@ -13,10 +13,13 @@ export class StatusProvider {
   constructor() {
     this.qrList = [
       {
-        fullqr: 'netto-64-2018-03-10'
+        fullqr: 'netto-500-2018-03-10'
       },
       {
         fullqr: 'fakta-12-2019-01-10'
+      },
+      {
+        fullqr: 'netto-64-2018-03-10'
       }
     ];
 
