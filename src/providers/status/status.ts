@@ -45,6 +45,9 @@ export class StatusProvider {
         this.qrList.forEach((item, index) => {
           if (item.fullqr == scannedCode) {
             alert(item.fullqr);
+            return true;
+          } else {
+            return false;
           }
         });
       }
