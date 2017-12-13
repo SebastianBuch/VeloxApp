@@ -41,7 +41,7 @@ export class StatusProvider {
     });
   }
 
-  checkScan(scannedCode:string){
+  checkScan(scannedCode:string): boolean {
         this.qrList.forEach((item, index) => {
           if (item.fullqr == scannedCode) {
             alert(item.fullqr);
@@ -50,6 +50,7 @@ export class StatusProvider {
             return false;
           }
         });
+      return false;
       }
 
 }
