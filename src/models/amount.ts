@@ -1,5 +1,5 @@
 export class AmountOfProducts {
-  qrid: string;
+  qrID: string;
   barcode: string;
   amount: number;
 }

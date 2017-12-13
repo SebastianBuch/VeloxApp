@@ -6,12 +6,12 @@ import { AmountOfProducts } from '../../models/amount';
 @Injectable()
 export class StatusProvider {
 
-  qrlist = qrID[];
-  amountlist = AmountOfProducts[];
+  qrList: qrID[];
+  amountList: AmountOfProducts[];
 
   constructor(public http: HttpClient) {
     console.log('Hello StatusProvider Provider');
-    this.qrlist = [
+    this.qrList = [
       {
         qr: 'netto15-2018-01-13'
       },
@@ -20,14 +20,14 @@ export class StatusProvider {
       }
     ];
 
-    this.amountlist = [
+    this.amountList = [
       {
-        qrid: 'netto15-2018-01-13',
+        qrID: 'netto15-2018-01-13',
         barcode: '534345435345',
         amount: 34,
       },
       {
-        qrid: 'netto10-2018-01-16',
+        qrID: 'netto10-2018-01-16',
         barcode: '534345435345',
         amount: 56,
       },

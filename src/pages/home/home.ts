@@ -43,7 +43,7 @@ export class HomePage {
     this.barcodeScanner.scan().then((barcodeData) => {
       // Success! Barcode data is here
       // alert(barcodeData.text);
-      if (barcodeData.text === '8719323938014') {
+      if (barcodeData.text === '8719323938014'/* Check through array if status data exists */) {
         this.nativeStorage.setItem('scannedShopone', {scannedShop: barcodeData.text})
           .then();
         this.navCtrl.setRoot(MenuPage);
