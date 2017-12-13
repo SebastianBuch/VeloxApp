@@ -50,7 +50,7 @@ export class StatusProvider {
             return false;
           }
         });
-      return false;
+        return;
       }
 
 }
