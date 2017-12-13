@@ -15,7 +15,7 @@ export class StatusProvider {
         fullqr: 'netto-64-2018-03-10'
       },
       {
-        fullqr: 'netto10-2018-01-16'
+        fullqr: 'fakta-12-2019-01-10'
       }
     ];
 
