@@ -4,6 +4,7 @@ import { ReceiptPage } from '../receipt/receipt';
 import { NativeStorage } from '@ionic-native/native-storage';
 import { ToastController } from 'ionic-angular';
 import { Storage } from '@ionic/storage';
+import {StatusProvider} from '../../providers/status/status';
 
 @Component({
   selector: 'page-register',
@@ -21,7 +22,8 @@ export class RegisterPage {
               public navParams: NavParams,
               private nativeStorage: NativeStorage,
               private toastCtrl: ToastController,
-              private storage: Storage) {
+              private storage: Storage,
+              private statusService: StatusProvider) {
     console.log(this.todayDate.getDate(), this.todayDate.getMonth()+1, this.todayDate.getFullYear());
   }
 
@@ -51,7 +53,7 @@ export class RegisterPage {
           () => console.log('success'),
           error => console.error('Error storing item', error)
         );
-      this.saveQRtoDB(this.qrData);
+      this.statusService.saveQRtoDB(this.qrData);
       this.navCtrl.push(ReceiptPage).then();
     }
   }
@@ -62,10 +64,6 @@ export class RegisterPage {
       duration: 3000,
       position: 'top'
     }).present();
-  }
-
-  saveQRtoDB(data:string) {
-    alert(data);
   }
 
 }

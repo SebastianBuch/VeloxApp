@@ -34,4 +34,8 @@ export class StatusProvider {
     ]
   }
 
+  saveQRtoDB(data:string) {
+    alert(data);
+  }
+
 }
