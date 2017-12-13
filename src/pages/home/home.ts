@@ -29,7 +29,7 @@ export class HomePage {
 
     this.nativeStorage.getItem('scannedShopone')
       .then(data => { if (data.scannedShop != '') {
-        this.navCtrl.setRoot(MenuPage);
+        this.navCtrl.setRoot(MenuPage).then();
     }}, error => console.error(error));
 
   }
@@ -40,7 +40,7 @@ export class HomePage {
       if (barcodeData.text === '8719323938014'/* Check through array if status data exists */) {
         this.nativeStorage.setItem('scannedShopone', {scannedShop: barcodeData.text})
           .then();
-        this.navCtrl.setRoot(MenuPage);
+        this.navCtrl.setRoot(MenuPage).then();
       } else {
         this.toastCtrl.create({
           message: 'Invalid QR code',
@@ -54,11 +54,11 @@ export class HomePage {
   }
 
   goToMenu(){
-    this.navCtrl.setRoot(MenuPage);
+    this.navCtrl.setRoot(MenuPage).then();
   }
 
   goToReceipt() {
-    this.navCtrl.push(ReceiptPage);
+    this.navCtrl.push(ReceiptPage).then();
   }
 
   registerShopPage() {
@@ -83,7 +83,7 @@ export class HomePage {
           text: 'OK',
           handler: data => {
             if (data.password === "ok") {
-              this.navCtrl.push(RegisterPage);
+              this.navCtrl.push(RegisterPage).then();
             } else {
               console.log('Wrong Password');
               // toast begin
