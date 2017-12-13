@@ -43,7 +43,7 @@ export class StatusProvider {
 
   checkScan(scannedCode:string): boolean {
         this.qrList.forEach((item, index) => {
-          if (item.fullqr == scannedCode) {
+          if (item.fullqr = scannedCode) {
             alert(item.fullqr);
             return true;
           } else {
