@@ -8,6 +8,7 @@ export class StatusProvider {
 
   qrList: qrID[];
   amountList: AmountOfProducts[];
+  result: boolean;
 
   constructor() {
     this.qrList = [
@@ -45,11 +46,12 @@ export class StatusProvider {
         this.qrList.forEach((item, index) => {
           if (item.fullqr == scannedCode) {
             alert(item.fullqr);
-            return true;
+            this.result = true;
           } else {
-            return false;
+            this.result = false;
           }
         });
+        return this.result;
       }
 
 }
