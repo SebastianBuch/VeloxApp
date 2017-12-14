@@ -2,7 +2,6 @@ import { Injectable } from '@angular/core';
 import { qrID } from '../../models/qr-id';
 import { AmountOfProducts } from '../../models/amount';
 import { Observable } from 'rxjs/Observable';
-import {observable} from 'rxjs/symbol/observable';
 import { AngularFireDatabase } from 'angularfire2/database';
 
 @Injectable()

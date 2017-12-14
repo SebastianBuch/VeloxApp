@@ -16,7 +16,6 @@ import { RegisterPage } from "../pages/register/register";
 import { ReceiptPage } from '../pages/receipt/receipt';
 import { ScanpromptPage } from '../pages/scanprompt/scanprompt';
 import { NgxQRCodeModule } from 'ngx-qrcode2';
-import { Vibration } from '@ionic-native/vibration';
 import { ScreenOrientation } from '@ionic-native/screen-orientation';
 import { AuthProvider } from '../providers/auth/auth';
 import { ProductServiceProvider } from '../providers/product-service/product-service';
@@ -70,7 +69,6 @@ export const firebaseConfig = {
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     BarcodeScanner,
     NgxQRCodeModule,
-    Vibration,
     NativeStorage,
     ScreenOrientation,
     AuthProvider,
