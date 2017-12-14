@@ -13,7 +13,10 @@ export class ProductServiceProvider {
   constructor(private storage: Storage, private afDB: AngularFireDatabase) {
 
     const itemsRef = afDB.list('products');
-    itemsRef.push({barcodeID: '8719323938014', productName: 'Sko'});
+    itemsRef.push({
+      barcodeID: '5701098025269',
+      productName: 'Brillerens'
+    });
 
     this.products = [
       {
