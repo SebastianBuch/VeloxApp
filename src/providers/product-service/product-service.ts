@@ -12,7 +12,7 @@ export class ProductServiceProvider {
   constructor(private storage: Storage) {
     this.products = [
       {
-        barcodeID: '8719323928014',
+        barcodeID: '8719323938014',
         productName: 'Sko'
       },
       {
