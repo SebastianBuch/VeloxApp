@@ -33,7 +33,7 @@ export class HomePage {
 
   ionViewDidLoad() {
     this.nativeStorage.getItem('scannedShopone')
-      .then(data => { if (data.scannedShop != '') {
+      .then(data => { if (data.scannedShopLocal != '') {
         this.navCtrl.setRoot(MenuPage).then();
       }}, /*error => alert(error)*/);
   }
@@ -43,7 +43,7 @@ export class HomePage {
       // Success! Barcode data is here
       this.statusService.checkScan(barcodeData.text);
       if ( this.statusService.checkScan(barcodeData.text) == true /*Check through array if status data exists*/ ) {
-        this.nativeStorage.setItem('scannedShopone', {scannedShop: barcodeData.text})
+        this.nativeStorage.setItem('scannedShopone', {scannedShopLocal: barcodeData.text})
           .then();
         this.navCtrl.setRoot(MenuPage).then();
       } else {

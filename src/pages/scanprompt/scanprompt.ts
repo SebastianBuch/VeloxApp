@@ -42,19 +42,19 @@ export class ScanpromptPage {
   }
 
   confirmAmount() {
-    /*this.nativeStorage.getItem('scannedShopone').then(data => this.scannedShop = data, error => console.error(error))
+    this.nativeStorage.getItem('scannedShopone').then(data => this.scannedShop = data.scannedShopLocal, error => console.error(error))
     this.qrID = this.scannedShop;
     this.barcode = this.productService.scannedBarcode;
     this.amount = this.productAmount;
 
-    this.statusService.saveAmountToDB({qrID: this.qrID, barcode: this.barcode, amount: this.amount});*/
+    this.statusService.saveAmountToDB({qrID: this.qrID, barcode: this.barcode, amount: this.amount});
 
     this.toastCtrl.create({
       message: this.productAmount + ' was registered',
       duration: 3000,
       position: 'top'
     }).present();
-    this.scanner();
+    //this.scanner();
   }
 
   scanner() {
