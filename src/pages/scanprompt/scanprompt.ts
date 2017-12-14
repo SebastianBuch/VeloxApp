@@ -36,13 +36,14 @@ export class ScanpromptPage {
               private statusService: StatusProvider,
               private storage: Storage) {
 
+    this.nativeStorage.getItem('scannedShopone').then(data => this.scannedShop = data.scannedShopLocal, error => console.error(error));
+
     productService.findProductData(this.productService.scannedBarcode).subscribe(productInfo => {
       this.findProductData = productInfo;
     });
   }
 
   confirmAmount() {
-    this.nativeStorage.getItem('scannedShopone').then(data => this.scannedShop = data.scannedShopLocal, error => console.error(error));
     this.qrID = this.scannedShop;
     alert(this.scannedShop);
     this.barcode = this.productService.scannedBarcode;
