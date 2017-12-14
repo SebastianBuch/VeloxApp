@@ -53,9 +53,7 @@ export class RegisterPage {
           () => console.log('success'),
           error => console.error('Error storing item', error)
         );
-      this.statusService.saveQRtoDB({fullqr: this.qrData}).subscribe(result => {
-
-      });
+      this.statusService.saveQRtoDB({fullqr: this.qrData});
       this.navCtrl.push(ReceiptPage).then();
     }
   }

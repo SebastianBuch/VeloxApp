@@ -18,10 +18,22 @@ import { ScanpromptPage } from '../pages/scanprompt/scanprompt';
 import { NgxQRCodeModule } from 'ngx-qrcode2';
 import { Vibration } from '@ionic-native/vibration';
 import { ScreenOrientation } from '@ionic-native/screen-orientation';
-import {SplashscreenPage} from '../pages/splashscreen/splashscreen';
 import { AuthProvider } from '../providers/auth/auth';
 import { ProductServiceProvider } from '../providers/product-service/product-service';
 import { StatusProvider } from '../providers/status/status';
+
+import { AngularFireModule } from 'angularfire2';
+import { AngularFireDatabaseModule, AngularFireDatabase } from 'angularfire2/database';
+import { AngularFireAuthModule } from 'angularfire2/auth';
+
+export const firebaseConfig = {
+  apiKey: "AIzaSyBb6IS8sAHNKDefiHCGOHUJG6w9uoei0Uc",
+  authDomain: "velox-e581c.firebaseapp.com",
+  databaseURL: "https://velox-e581c.firebaseio.com",
+  projectId: "velox-e581c",
+  storageBucket: "velox-e581c.appspot.com",
+  messagingSenderId: "554354475559"
+};
 
 @NgModule({
   declarations: [
@@ -32,13 +44,15 @@ import { StatusProvider } from '../providers/status/status';
     RegisterPage,
     ReceiptPage,
     ScanpromptPage,
-    SplashscreenPage
   ],
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp),
     NgxQRCodeModule,
     IonicStorageModule.forRoot(),
+    AngularFireModule.initializeApp(firebaseConfig),
+    AngularFireDatabaseModule,
+    AngularFireAuthModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -49,7 +63,6 @@ import { StatusProvider } from '../providers/status/status';
     RegisterPage,
     ReceiptPage,
     ScanpromptPage,
-    SplashscreenPage
   ],
   providers: [
     StatusBar,
@@ -62,7 +75,8 @@ import { StatusProvider } from '../providers/status/status';
     ScreenOrientation,
     AuthProvider,
     ProductServiceProvider,
-    StatusProvider
+    StatusProvider,
+    AngularFireDatabase
 ]
 })
 export class AppModule {}

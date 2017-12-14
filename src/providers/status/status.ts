@@ -3,6 +3,7 @@ import { qrID } from '../../models/qr-id';
 import { AmountOfProducts } from '../../models/amount';
 import { Observable } from 'rxjs/Observable';
 import {observable} from 'rxjs/symbol/observable';
+import { AngularFireDatabase } from 'angularfire2/database';
 
 @Injectable()
 export class StatusProvider {
@@ -11,7 +12,11 @@ export class StatusProvider {
   amountList: AmountOfProducts[];
   result: boolean;
 
-  constructor() {
+  constructor(private afDB: AngularFireDatabase) {
+
+    /*const itemsRef = afDB.list('qrList');
+    itemsRef.push({fullqr: 'netto-500-2018-03-10'});*/
+
     this.qrList = [
       {
         fullqr: 'netto-500-2018-03-10'
@@ -38,12 +43,10 @@ export class StatusProvider {
     ]
   }
 
-  saveQRtoDB(data:qrID): Observable<qrID> {
-    return Observable.create(observable => {
-      this.qrList.push(data);
-      observable.next(console.log(this.qrList));
-      observable.complete();
-    });
+  saveQRtoDB(data:qrID) {
+      const itemsRef = this.afDB.list<qrID>('/qrList/');
+      itemsRef.push(data);
+      //this.qrList.push(data);
   }
 
   checkScan(scannedCode:string): boolean {
