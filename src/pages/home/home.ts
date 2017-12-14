@@ -28,11 +28,14 @@ export class HomePage {
               private nativeStorage: NativeStorage,
               private statusService: StatusProvider) {
 
+    this.ionViewLoad();
+  }
+
+  ionViewLoad() {
     this.nativeStorage.getItem('scannedShopone')
       .then(data => { if (data.scannedShop != '') {
         this.navCtrl.setRoot(MenuPage).then();
-    }}, /*error => alert(error)*/);
-
+      }}, /*error => alert(error)*/);
   }
 
   async scanBarcode() {

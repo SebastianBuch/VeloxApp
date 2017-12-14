@@ -22,9 +22,12 @@ export class MenuPage {
               private nativeStorage: NativeStorage,
               private storage: Storage) {
 
+    this.ionViewLoad();
+  }
+
+  ionViewLoad() {
     this.nativeStorage.getItem('scannedShopone')
       .then(data => this.scannedShop = data, error => console.error(error));
-
   }
 
   async scanBarcode() {
