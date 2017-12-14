@@ -5,7 +5,6 @@ import { MenuPage } from '../menu/menu';
 import { RegisterPage } from '../register/register';
 import { ToastController } from 'ionic-angular';
 import { ReceiptPage } from '../receipt/receipt';
-import { ScreenOrientation } from '@ionic-native/screen-orientation';
 import { NativeStorage } from '@ionic-native/native-storage';
 import { StatusProvider } from '../../providers/status/status';
 
@@ -16,15 +15,12 @@ import { StatusProvider } from '../../providers/status/status';
 export class HomePage {
 
   options: BarcodeScannerOptions;
-  enterShopQR: '';
-  scannedShop: '';
   test: boolean = false;
 
   constructor(public navCtrl: NavController,
               private barcodeScanner: BarcodeScanner,
               private alertCtrl: AlertController,
               private toastCtrl: ToastController,
-              private screenOrientation: ScreenOrientation,
               private nativeStorage: NativeStorage,
               private statusService: StatusProvider) {
 

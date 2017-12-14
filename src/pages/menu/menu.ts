@@ -1,12 +1,11 @@
 import { Component } from '@angular/core';
-import {AlertController, NavController, NavParams} from 'ionic-angular';
+import { AlertController, NavController, NavParams } from 'ionic-angular';
 import { BarcodeScanner, BarcodeScannerOptions } from '@ionic-native/barcode-scanner';
-import {HomePage} from '../home/home';
-import {StatsPage} from '../stats/stats';
+import { HomePage } from '../home/home';
+import { StatsPage } from '../stats/stats';
 import { ScanpromptPage } from '../scanprompt/scanprompt';
 import { NativeStorage } from '@ionic-native/native-storage';
-import { Storage } from '@ionic/storage';
-import {ProductServiceProvider} from '../../providers/product-service/product-service';
+import { ProductServiceProvider } from '../../providers/product-service/product-service';
 
 @Component({
   selector: 'page-menu',
@@ -21,8 +20,7 @@ export class MenuPage {
               private alertCtrl: AlertController,
               private barcodeScanner: BarcodeScanner,
               private nativeStorage: NativeStorage,
-              private productService: ProductServiceProvider,
-              private storage: Storage) {
+              private productService: ProductServiceProvider) {
 
     this.ionViewDidLoad();
   }

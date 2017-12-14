@@ -3,8 +3,7 @@ import { NavController, NavParams } from 'ionic-angular';
 import { ReceiptPage } from '../receipt/receipt';
 import { NativeStorage } from '@ionic-native/native-storage';
 import { ToastController } from 'ionic-angular';
-import { Storage } from '@ionic/storage';
-import {StatusProvider} from '../../providers/status/status';
+import { StatusProvider } from '../../providers/status/status';
 
 @Component({
   selector: 'page-register',
@@ -16,13 +15,11 @@ export class RegisterPage {
   qrDataID = '';
   qrDataDate = '';
   createdCode = '';
-  todayDate = new Date();
 
   constructor(public navCtrl: NavController,
               public navParams: NavParams,
               private nativeStorage: NativeStorage,
               private toastCtrl: ToastController,
-              private storage: Storage,
               private statusService: StatusProvider) {
 
   }

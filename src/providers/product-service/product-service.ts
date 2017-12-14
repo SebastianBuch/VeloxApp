@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import { ProductData } from '../../models/products';
 import { Observable } from 'rxjs/Observable';
-import { Storage } from '@ionic/storage';
 import { AngularFireDatabase } from 'angularfire2/database';
 
 @Injectable()
@@ -10,7 +9,7 @@ export class ProductServiceProvider {
   products: ProductData[];
   scannedBarcode: string;
 
-  constructor(private storage: Storage, private afDB: AngularFireDatabase) {
+  constructor(private afDB: AngularFireDatabase) {
 
     //const itemsRef = afDB.list('products');
     //itemsRef.push({barcodeID: '5701098025269', productName: 'Brillerens'});

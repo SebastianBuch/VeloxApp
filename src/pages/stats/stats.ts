@@ -46,8 +46,4 @@ export class StatsPage {
     },1);
   }
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad StatsPage');
-  }
-
 }
