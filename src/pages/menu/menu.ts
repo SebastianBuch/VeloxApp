@@ -6,6 +6,7 @@ import {StatsPage} from '../stats/stats';
 import { ScanpromptPage } from '../scanprompt/scanprompt';
 import { NativeStorage } from '@ionic-native/native-storage';
 import { Storage } from '@ionic/storage';
+import {ProductServiceProvider} from '../../providers/product-service/product-service';
 
 @Component({
   selector: 'page-menu',
@@ -20,6 +21,7 @@ export class MenuPage {
               private alertCtrl: AlertController,
               private barcodeScanner: BarcodeScanner,
               private nativeStorage: NativeStorage,
+              private productService: ProductServiceProvider,
               private storage: Storage) {
 
     this.ionViewDidLoad();
@@ -32,8 +34,9 @@ export class MenuPage {
 
   async scanBarcode() {
     this.barcodeScanner.scan().then((barcodeData) => {
-      this.nativeStorage.setItem('scannedResult', {productData: barcodeData.text.toString()})
-        .then( () => console.log('Stored item!'), error => console.error('Error storing item'));
+      this.productService.saveBarcode(barcodeData.text.toString());
+      /*this.nativeStorage.setItem('scannedResult', {productData: barcodeData.text.toString()})
+        .then( () => console.log('Stored item!'), error => console.error('Error storing item'));*/
       console.log(barcodeData.text);
       this.navCtrl.push(ScanpromptPage).then();
     }, (err) => {

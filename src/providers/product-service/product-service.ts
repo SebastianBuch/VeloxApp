@@ -7,6 +7,7 @@ import { Storage } from '@ionic/storage';
 export class ProductServiceProvider {
 
   products: ProductData[];
+  scannedBarcode: string;
 
   constructor(private storage: Storage) {
     this.products = [
@@ -21,6 +22,10 @@ export class ProductServiceProvider {
     ];
   }
 
+  saveBarcode(barcode) {
+    this.scannedBarcode = barcode;
+  }
+
   findProductData(): Observable<ProductData> {
     let productInfo = 0;
     return Observable.create(observable => {
@@ -29,7 +34,7 @@ export class ProductServiceProvider {
     });
   }
 
-  findProductData2(barcode): Observable<ProductData> {
+  /*findProductData2(barcode): Observable<ProductData> {
     return Observable.create(observable => {
       this.products.forEach((item, index) => {
         if (item.barcodeID == barcode) {
@@ -38,5 +43,5 @@ export class ProductServiceProvider {
         }
       });
     });
-  }
+  }*/
 }

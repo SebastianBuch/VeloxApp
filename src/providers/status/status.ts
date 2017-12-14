@@ -61,7 +61,7 @@ export class StatusProvider {
   saveAmountToDB(data:AmountOfProducts): Observable<AmountOfProducts> {
     return Observable.create(observable => {
       this.amountList.push(data);
-      observable.next(this.amountList[2]);
+      observable.next();
       observable.complete();
     });
   }
