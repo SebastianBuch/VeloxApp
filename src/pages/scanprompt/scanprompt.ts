@@ -7,6 +7,7 @@ import { ProductServiceProvider } from '../../providers/product-service/product-
 import { ProductData } from '../../models/products';
 import { Storage } from '@ionic/storage';
 import { StatusProvider } from '../../providers/status/status';
+import {observable} from 'rxjs/symbol/observable';
 
 @Component({
   selector: 'page-scanprompt',
