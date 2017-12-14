@@ -63,7 +63,9 @@ export class StatusProvider {
 
   saveAmountToDB(data:AmountOfProducts): Observable<AmountOfProducts> {
     return Observable.create(observable => {
-      this.amountList.push(data);
+      const itemsRef = this.afDB.list<AmountOfProducts>('/amountList/');
+      itemsRef.push(data);
+      //this.amountList.push(data);
       observable.next(this.amountList[2]);
       observable.complete();
     });
