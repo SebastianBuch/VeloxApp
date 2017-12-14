@@ -12,12 +12,12 @@ export class ProductServiceProvider {
   constructor(private storage: Storage) {
     this.products = [
       {
-        barcodeID: '5701098025269',
-        productName: 'Brillerens'
-      },
-      {
         barcodeID: '8719323928014',
         productName: 'Sko'
+      },
+      {
+        barcodeID: '5701098025269',
+        productName: 'Brillerens'
       }
     ];
   }
