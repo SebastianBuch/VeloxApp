@@ -57,7 +57,7 @@ export class ScanpromptPage {
       duration: 3000,
       position: 'top'
     }).present();
-
+    alert(this.statusService.amountList[2]);
     //this.scanner();
   }
 
