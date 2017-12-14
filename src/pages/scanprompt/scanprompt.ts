@@ -46,9 +46,9 @@ export class ScanpromptPage {
 
   confirmAmount() {
     this.nativeStorage.getItem('scannedShopone').then(data => this.scannedShop = data, error => console.error(error))
-    this.qrID = 'dad';
-    this.barcode = 'dasda';
-    this.amount = '345';
+    this.qrID = this.scannedShop;
+    this.barcode = this.productData;
+    this.amount = this.productAmount;
 
     this.statusService.saveAmountToDB({qrID: this.qrID, barcode: this.barcode, amount: this.amount});
 
@@ -57,7 +57,6 @@ export class ScanpromptPage {
       duration: 3000,
       position: 'top'
     }).present();
-    alert(this.statusService.amountList[2]);
     //this.scanner();
   }
 
