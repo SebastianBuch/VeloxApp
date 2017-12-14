@@ -14,9 +14,6 @@ export class StatusProvider {
 
   constructor(private afDB: AngularFireDatabase) {
 
-    /*const itemsRef = afDB.list('qrList');
-    itemsRef.push({fullqr: 'netto-500-2018-03-10'});*/
-
     this.qrList = [
       {
         fullqr: 'netto-500-2018-03-10'
