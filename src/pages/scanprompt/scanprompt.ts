@@ -47,7 +47,9 @@ export class ScanpromptPage {
     this.barcode = this.productService.scannedBarcode;
     this.amount = this.productAmount;
 
-    this.statusService.saveAmountToDB({qrID: this.qrID, barcode: this.barcode, amount: this.amount});
+    this.statusService.saveAmountToDB({qrID: this.qrID, barcode: this.barcode, amount: this.amount}).subscribe(amount => {
+      alert(amount);
+    });
 
     this.toastCtrl.create({
       message: this.productAmount + ' was registered',
