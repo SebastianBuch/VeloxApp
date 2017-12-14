@@ -35,8 +35,6 @@ export class MenuPage {
   async scanBarcode() {
     this.barcodeScanner.scan().then((barcodeData) => {
       this.productService.saveBarcode(barcodeData.text.toString());
-      /*this.nativeStorage.setItem('scannedResult', {productData: barcodeData.text.toString()})
-        .then( () => console.log('Stored item!'), error => console.error('Error storing item'));*/
       console.log(barcodeData.text);
       this.navCtrl.push(ScanpromptPage).then();
     }, (err) => {

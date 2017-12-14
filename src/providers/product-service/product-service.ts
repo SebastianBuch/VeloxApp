@@ -26,15 +26,7 @@ export class ProductServiceProvider {
     this.scannedBarcode = barcode;
   }
 
-  /*findProductData(): Observable<ProductData> {
-    let productInfo = 0;
-    return Observable.create(observable => {
-      observable.next(this.products[productInfo]);
-      observable.complete();
-    });
-  }*/
-
-  findProductData2(barcode): Observable<ProductData> {
+  findProductData(barcode): Observable<ProductData> {
     return Observable.create(observable => {
       this.products.forEach((item, index) => {
         if (item.barcodeID == barcode) {
