@@ -39,13 +39,12 @@ export class ScanpromptPage {
     this.nativeStorage.getItem('scannedResult')
       .then(data => this.productData = data, error => console.error(error));
 
-    productService.findProductData().subscribe(productInfo => {
+    productService.findProductData2(this.productService.scannedBarcode).subscribe(productInfo => {
       this.findProductData = productInfo;
     });
   }
 
   confirmAmount() {
-    alert(this.productService.scannedBarcode);
     /*this.nativeStorage.getItem('scannedShopone').then(data => this.scannedShop = data, error => console.error(error))
     this.qrID = this.scannedShop;
     this.barcode = this.productData;
