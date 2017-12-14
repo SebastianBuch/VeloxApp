@@ -57,7 +57,7 @@ export class ScanpromptPage {
       position: 'top'
     }).present();
 
-    this.scanner();
+    //this.scanner();
   }
 
   scanner() {
