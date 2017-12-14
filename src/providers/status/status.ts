@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { qrID } from '../../models/qr-id';
 import { AmountOfProducts } from '../../models/amount';
 import { Observable } from 'rxjs/Observable';
+import {observable} from 'rxjs/symbol/observable';
 
 @Injectable()
 export class StatusProvider {
@@ -56,16 +57,12 @@ export class StatusProvider {
       }
       return this.result;
     }
-        /*this.qrList.forEach((item) => {
-          if (item.fullqr == scannedCode) {
-            alert(item.fullqr);
-            this.result = true;
-          } else {
-            alert('failed to connect');
-            this.result = false;
-          }
-        });
-        return this.result;
-      }*/
 
+  saveAmountToDB(data:AmountOfProducts): Observable<AmountOfProducts> {
+    return Observable.create(observable => {
+      alert(data);
+      observable.next();
+      observable.complete();
+    });
+  }
 }

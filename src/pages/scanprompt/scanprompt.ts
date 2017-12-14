@@ -6,6 +6,7 @@ import { ToastController } from 'ionic-angular';
 import { ProductServiceProvider } from '../../providers/product-service/product-service';
 import { ProductData } from '../../models/products';
 import { Storage } from '@ionic/storage';
+import { StatusProvider } from '../../providers/status/status';
 
 @Component({
   selector: 'page-scanprompt',
@@ -15,6 +16,11 @@ export class ScanpromptPage {
 
   productData = '';
   productAmount = '';
+  scannedShop = '';
+
+  qrID: string;
+  barcode: string;
+  amount: string;
 
   findProductData: ProductData;
 
@@ -26,6 +32,7 @@ export class ScanpromptPage {
               private toastCtrl: ToastController,
               public loadingCtrl: LoadingController,
               private productService: ProductServiceProvider,
+              private statusService: StatusProvider,
               private storage: Storage) {
 
     this.nativeStorage.getItem('scannedResult')
@@ -37,7 +44,12 @@ export class ScanpromptPage {
   }
 
   confirmAmount() {
-    // save data
+    this.nativeStorage.getItem('scannedShopone').then(data => this.scannedShop = data, error => console.error(error))
+    this.qrID = this.scannedShop;
+    this.barcode = this.productData;
+    this.amount = this.productAmount;
+
+    this.statusService.saveAmountToDB({qrID: this.qrID, barcode: this.barcode, amount: this.amount});
 
     this.toastCtrl.create({
       message: this.productAmount + ' was registered',
