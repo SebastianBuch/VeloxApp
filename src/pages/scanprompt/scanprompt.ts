@@ -48,7 +48,7 @@ export class ScanpromptPage {
     this.amount = this.productAmount;
 
     this.statusService.saveAmountToDB({qrID: this.qrID, barcode: this.barcode, amount: this.amount}).subscribe(amount => {
-      alert(amount);
+      alert(amount.qrID + amount.barcode + amount.amount);
     });
 
     this.toastCtrl.create({
