@@ -42,7 +42,7 @@ export class ScanpromptPage {
   }
 
   confirmAmount() {
-    this.nativeStorage.getItem('scannedShopone').then(data => this.scannedShop = data.scannedShopLocal, error => console.error(error))
+    this.nativeStorage.getItem('scannedShopone').then(data => this.scannedShop = data.scannedShopLocal, error => console.error(error));
     this.qrID = this.scannedShop;
     alert(this.scannedShop);
     this.barcode = this.productService.scannedBarcode;
