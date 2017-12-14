@@ -28,10 +28,10 @@ export class HomePage {
               private nativeStorage: NativeStorage,
               private statusService: StatusProvider) {
 
-    this.ionViewLoad();
+    this.ionViewDidLoad();
   }
 
-  ionViewLoad() {
+  ionViewDidLoad() {
     this.nativeStorage.getItem('scannedShopone')
       .then(data => { if (data.scannedShop != '') {
         this.navCtrl.setRoot(MenuPage).then();

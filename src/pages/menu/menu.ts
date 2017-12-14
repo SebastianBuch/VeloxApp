@@ -22,10 +22,10 @@ export class MenuPage {
               private nativeStorage: NativeStorage,
               private storage: Storage) {
 
-    this.ionViewLoad();
+    this.ionViewDidLoad();
   }
 
-  ionViewLoad() {
+  ionViewDidLoad() {
     this.nativeStorage.getItem('scannedShopone')
       .then(data => this.scannedShop = data, error => console.error(error));
   }
