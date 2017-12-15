@@ -18,6 +18,7 @@ export class StatusProvider {
       console.log(this.qrList);
     });
 
+
     /*this.qrList = [
       {
         fullqr: 'netto-500-2018-03-10'
