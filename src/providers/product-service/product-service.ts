@@ -6,7 +6,7 @@ import { AngularFireDatabase } from 'angularfire2/database';
 @Injectable()
 export class ProductServiceProvider {
 
-  products: ProductData[];
+  products: any[];
   scannedBarcode: string;
 
   constructor(private afDB: AngularFireDatabase) {
@@ -14,7 +14,12 @@ export class ProductServiceProvider {
     //const itemsRef = afDB.list('products');
     //itemsRef.push({barcodeID: '5701098025269', productName: 'Brillerens'});
 
-    this.products = [
+    this.afDB.list('products').valueChanges().subscribe(products => {
+      this.products = products;
+      console.log(this.products);
+    });
+
+    /*this.products = [
       {
         barcodeID: '8719323938014',
         productName: 'Sko'
@@ -23,7 +28,7 @@ export class ProductServiceProvider {
         barcodeID: '5701098025269',
         productName: 'Brillerens'
       }
-    ];
+    ];*/
   }
 
   saveBarcode(barcode) {
