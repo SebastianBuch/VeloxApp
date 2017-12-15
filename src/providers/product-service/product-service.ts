@@ -12,7 +12,7 @@ export class ProductServiceProvider {
   constructor(private afDB: AngularFireDatabase) {
 
     //const itemsRef = afDB.list('products');
-    //itemsRef.push({barcodeID: '5701098025269', productName: 'Brillerens'});
+    //itemsRef.push({barcodeID: '0705632085943', productName: 'Et eller andet lort'});
 
     this.afDB.list('products').valueChanges().subscribe(products => {
       this.products = products;

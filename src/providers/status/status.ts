@@ -7,13 +7,18 @@ import { AngularFireDatabase } from 'angularfire2/database';
 @Injectable()
 export class StatusProvider {
 
-  qrList: qrID[];
+  qrList: any[];
   amountList: AmountOfProducts[];
   result: boolean;
 
   constructor(private afDB: AngularFireDatabase) {
 
-    this.qrList = [
+    this.afDB.list('qrList').valueChanges().subscribe(qrList => {
+      this.qrList = qrList;
+      console.log(this.qrList);
+    });
+
+    /*this.qrList = [
       {
         fullqr: 'netto-500-2018-03-10'
       },
@@ -23,7 +28,7 @@ export class StatusProvider {
       {
         fullqr: 'netto-64-2018-03-10'
       }
-    ];
+    ];*/
 
     this.amountList = [
       {
