@@ -54,9 +54,9 @@ export class HomePage {
     });
   }
 
-  /*goToMenu(){
+  goToMenu(){
     this.navCtrl.setRoot(MenuPage).then();
-  }*/
+  }
 
   goToReceipt() {
     this.navCtrl.push(ReceiptPage).then();
