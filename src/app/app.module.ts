@@ -13,6 +13,7 @@ import { ReceiptPage } from '../pages/receipt/receipt';
 import { ScanpromptPage } from '../pages/scanprompt/scanprompt';
 
 // Providers
+import { AuthProvider } from '../providers/auth/auth';
 import { ProductServiceProvider } from '../providers/product-service/product-service';
 import { StatusProvider } from '../providers/status/status';
 
@@ -75,6 +76,7 @@ export const firebaseConfig = {
     NgxQRCodeModule,
     NativeStorage,
     ScreenOrientation,
+    AuthProvider,
     ProductServiceProvider,
     StatusProvider,
     AngularFireDatabase
