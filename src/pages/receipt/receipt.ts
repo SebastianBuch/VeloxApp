@@ -28,4 +28,8 @@ export class ReceiptPage {
     this.navCtrl.setRoot(MenuPage);
   }
 
+  sendMail() {
+
+  }
+
 }

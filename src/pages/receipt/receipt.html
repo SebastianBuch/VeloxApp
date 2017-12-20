@@ -13,6 +13,7 @@
   <p>{{ receiptData.dateAndID }}</p>
   <div class="centerreceipt">
     <ngx-qrcode [qrc-value]="receiptData.dateAndID"></ngx-qrcode>
+    <button ion-button (click)="sendMail()" color="secondary">Send to Mail</button>
     <button ion-button (click)="goToMenu()" color="secondary">Menu</button>
   </div>
 </ion-content>
