@@ -14,9 +14,6 @@ import { StatusProvider } from '../../providers/status/status';
 })
 export class HomePage {
 
-  options: BarcodeScannerOptions;
-  test: boolean = false;
-
   constructor(public navCtrl: NavController,
               private barcodeScanner: BarcodeScanner,
               private alertCtrl: AlertController,

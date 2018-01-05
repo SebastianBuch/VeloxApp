@@ -8,30 +8,16 @@ import { AngularFireDatabase } from 'angularfire2/database';
 export class StatusProvider {
 
   qrList: any[];
-  amountList: AmountOfProducts[];
+  //amountList: AmountOfProducts[];
   result: boolean;
 
   constructor(private afDB: AngularFireDatabase) {
 
     this.afDB.list('qrList').valueChanges().subscribe(qrList => {
       this.qrList = qrList;
-      console.log(this.qrList);
     });
 
-
-    /*this.qrList = [
-      {
-        fullqr: 'netto-500-2018-03-10'
-      },
-      {
-        fullqr: 'fakta-12-2019-01-10'
-      },
-      {
-        fullqr: 'netto-64-2018-03-10'
-      }
-    ];*/
-
-    this.amountList = [
+    /*this.amountList = [
       {
         qrID: 'netto15-2018-01-13',
         barcode: '534345435345',
@@ -42,13 +28,12 @@ export class StatusProvider {
         barcode: '534345435345',
         amount: '56',
       },
-    ]
+    ]*/
   }
 
   saveQRtoDB(data:qrID) {
       const itemsRef = this.afDB.list<qrID>('/qrList/');
       itemsRef.push(data);
-      //this.qrList.push(data);
   }
 
   checkScan(scannedCode:string): boolean {
@@ -67,8 +52,7 @@ export class StatusProvider {
     return Observable.create(observable => {
       const itemsRef = this.afDB.list<AmountOfProducts>('/amountList/');
       itemsRef.push(data);
-      //this.amountList.push(data);
-      observable.next(this.amountList[2]);
+      observable.next(/*this.amountList[2]*/);
       observable.complete();
     });
   }

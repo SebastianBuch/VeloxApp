@@ -33,7 +33,6 @@ export class MenuPage {
   async scanBarcode() {
     this.barcodeScanner.scan().then((barcodeData) => {
       this.productService.saveBarcode(barcodeData.text.toString());
-      console.log(barcodeData.text);
       this.navCtrl.push(ScanpromptPage).then();
     }, (err) => {
       // An error occurred

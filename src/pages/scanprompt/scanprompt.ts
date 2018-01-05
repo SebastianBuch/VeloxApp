@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import {LoadingController, NavController, NavParams} from 'ionic-angular';
+import { NavController, NavParams} from 'ionic-angular';
 import { NativeStorage } from '@ionic-native/native-storage';
 import { BarcodeScanner } from '@ionic-native/barcode-scanner';
 import { ToastController } from 'ionic-angular';
@@ -13,7 +13,6 @@ import { StatusProvider } from '../../providers/status/status';
 })
 export class ScanpromptPage {
 
-  productData = '';
   productAmount = '';
   scannedShop = '';
 
@@ -29,10 +28,10 @@ export class ScanpromptPage {
               private nativeStorage: NativeStorage,
               private barcodeScanner: BarcodeScanner,
               private toastCtrl: ToastController,
-              public loadingCtrl: LoadingController,
               private productService: ProductServiceProvider,
               private statusService: StatusProvider) {
 
+    // Get scanned shops QR, so it can be used with firebase
     this.nativeStorage.getItem('scannedShopone').then(data => this.scannedShop = data.scannedShopLocal, error => console.error(error));
 
     productService.findProductData(this.productService.scannedBarcode).subscribe(productInfo => {
@@ -63,7 +62,6 @@ export class ScanpromptPage {
     this.barcodeScanner.scan().then((barcodeData) => {
       // Success! Barcode data is here
       this.productService.saveBarcode(barcodeData.text.toString());
-      console.log(barcodeData.text);
       this.navCtrl.push(ScanpromptPage);
     }, (err) => {
       // An error occurred
