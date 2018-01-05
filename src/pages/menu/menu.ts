@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { AlertController, NavController, NavParams } from 'ionic-angular';
-import { BarcodeScanner, BarcodeScannerOptions } from '@ionic-native/barcode-scanner';
+import { BarcodeScanner } from '@ionic-native/barcode-scanner';
 import { HomePage } from '../home/home';
 import { StatsPage } from '../stats/stats';
 import { ScanpromptPage } from '../scanprompt/scanprompt';
