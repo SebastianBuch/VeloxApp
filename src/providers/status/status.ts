@@ -8,7 +8,6 @@ import { AngularFireDatabase } from 'angularfire2/database';
 export class StatusProvider {
 
   qrList: any[];
-  //amountList: AmountOfProducts[];
   result: boolean;
 
   constructor(private afDB: AngularFireDatabase) {
@@ -17,18 +16,6 @@ export class StatusProvider {
       this.qrList = qrList;
     });
 
-    /*this.amountList = [
-      {
-        qrID: 'netto15-2018-01-13',
-        barcode: '534345435345',
-        amount: '34',
-      },
-      {
-        qrID: 'netto10-2018-01-16',
-        barcode: '534345435345',
-        amount: '56',
-      },
-    ]*/
   }
 
   saveQRtoDB(data:qrID) {
